@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://yoo0926.github.io/2020/11/23/postgresql-1/</loc>
+    <loc>https://yoo0926.github.io/2020/11/01/start-blog/</loc>
     
     <lastmod>2020-11-22</lastmod>
     
@@ -11,21 +11,21 @@
   <url>
     <loc>https://yoo0926.github.io/2020/11/03/spring-1/</loc>
     
-    <lastmod>2020-11-02</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yoo0926.github.io/2020/11/01/start-blog/</loc>
-    
-    <lastmod>2020-11-02</lastmod>
+    <lastmod>2020-11-22</lastmod>
     
   </url>
   
   <url>
     <loc>https://yoo0926.github.io/2020/11/01/git-flow/</loc>
     
-    <lastmod>2020-11-02</lastmod>
+    <lastmod>2020-11-22</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yoo0926.github.io/2020/11/23/postgresql-1/</loc>
+    
+    <lastmod>2020-11-22</lastmod>
     
   </url>
   
@@ -38,24 +38,73 @@
   </url>
 
   
+  <url>
+    <loc>https://yoo0926.github.io/tags/programming/</loc>
+    <lastmod>2020-11-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yoo0926.github.io/tags/postgresql/</loc>
+    <lastmod>2020-11-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yoo0926.github.io/tags/sql/</loc>
+    <lastmod>2020-11-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yoo0926.github.io/tags/etc/</loc>
+    <lastmod>2020-11-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yoo0926.github.io/tags/blog/</loc>
+    <lastmod>2020-11-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yoo0926.github.io/tags/hexo/</loc>
+    <lastmod>2020-11-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yoo0926.github.io/tags/git/</loc>
+    <lastmod>2020-11-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yoo0926.github.io/tags/prograaming/</loc>
+    <lastmod>2020-11-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yoo0926.github.io/tags/spring/</loc>
+    <lastmod>2020-11-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
     <loc>https://yoo0926.github.io/categories/programming/</loc>
-    <lastmod>2020-11-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://yoo0926.github.io/categories/programming/postgresql/</loc>
-    <lastmod>2020-11-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://yoo0926.github.io/categories/programming/git/</loc>
     <lastmod>2020-11-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -69,7 +118,7 @@
   </url>
   
   <url>
-    <loc>https://yoo0926.github.io/categories/programming/spring/</loc>
+    <loc>https://yoo0926.github.io/categories/programming/postgresql/</loc>
     <lastmod>2020-11-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -77,6 +126,20 @@
   
   <url>
     <loc>https://yoo0926.github.io/categories/etc/blog/</loc>
+    <lastmod>2020-11-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yoo0926.github.io/categories/programming/git/</loc>
+    <lastmod>2020-11-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yoo0926.github.io/categories/programming/spring/</loc>
     <lastmod>2020-11-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
