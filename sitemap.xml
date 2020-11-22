@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yoo0926.github.io/2020/11/23/postgresql-1/</loc>
+    
+    <lastmod>2020-11-22</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://yoo0926.github.io/2020/11/03/spring-1/</loc>
     
     <lastmod>2020-11-02</lastmod>
@@ -25,7 +32,7 @@
 
   <url>
     <loc>https://yoo0926.github.io/</loc>
-    <lastmod>2020-11-02</lastmod>
+    <lastmod>2020-11-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -35,35 +42,42 @@
   
   <url>
     <loc>https://yoo0926.github.io/categories/programming/</loc>
-    <lastmod>2020-11-02</lastmod>
+    <lastmod>2020-11-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yoo0926.github.io/categories/programming/postgresql/</loc>
+    <lastmod>2020-11-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://yoo0926.github.io/categories/programming/git/</loc>
-    <lastmod>2020-11-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://yoo0926.github.io/categories/programming/spring/</loc>
-    <lastmod>2020-11-02</lastmod>
+    <lastmod>2020-11-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://yoo0926.github.io/categories/etc/</loc>
-    <lastmod>2020-11-02</lastmod>
+    <lastmod>2020-11-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yoo0926.github.io/categories/programming/spring/</loc>
+    <lastmod>2020-11-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://yoo0926.github.io/categories/etc/blog/</loc>
-    <lastmod>2020-11-02</lastmod>
+    <lastmod>2020-11-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
