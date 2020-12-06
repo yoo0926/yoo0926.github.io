@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yoo0926.github.io/2020/12/07/functional-2/</loc>
+    
+    <lastmod>2020-12-06</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://yoo0926.github.io/2020/12/07/functional-1/</loc>
     
     <lastmod>2020-12-06</lastmod>
@@ -53,6 +60,20 @@
   </url>
   
   <url>
+    <loc>https://yoo0926.github.io/tags/functional/</loc>
+    <lastmod>2020-12-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yoo0926.github.io/tags/git/</loc>
+    <lastmod>2020-12-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://yoo0926.github.io/tags/postgresql/</loc>
     <lastmod>2020-12-06</lastmod>
     <changefreq>daily</changefreq>
@@ -67,13 +88,6 @@
   </url>
   
   <url>
-    <loc>https://yoo0926.github.io/tags/functional/</loc>
-    <lastmod>2020-12-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://yoo0926.github.io/tags/prograaming/</loc>
     <lastmod>2020-12-06</lastmod>
     <changefreq>daily</changefreq>
@@ -82,13 +96,6 @@
   
   <url>
     <loc>https://yoo0926.github.io/tags/spring/</loc>
-    <lastmod>2020-12-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://yoo0926.github.io/tags/git/</loc>
     <lastmod>2020-12-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -125,13 +132,6 @@
   </url>
   
   <url>
-    <loc>https://yoo0926.github.io/categories/programming/spring/</loc>
-    <lastmod>2020-12-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://yoo0926.github.io/categories/programming/git/</loc>
     <lastmod>2020-12-06</lastmod>
     <changefreq>daily</changefreq>
@@ -147,6 +147,13 @@
   
   <url>
     <loc>https://yoo0926.github.io/categories/programming/functional/</loc>
+    <lastmod>2020-12-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yoo0926.github.io/categories/programming/spring/</loc>
     <lastmod>2020-12-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
