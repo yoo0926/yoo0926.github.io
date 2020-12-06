@@ -6,7 +6,7 @@
   <link href="https://yoo0926.github.io/atom.xml" rel="self"/>
   
   <link href="https://yoo0926.github.io/"/>
-  <updated>2020-12-06T15:02:48.827Z</updated>
+  <updated>2020-12-06T15:11:20.409Z</updated>
   <id>https://yoo0926.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://yoo0926.github.io/2020/12/07/functional-1/"/>
     <id>https://yoo0926.github.io/2020/12/07/functional-1/</id>
     <published>2020-12-06T15:02:48.000Z</published>
-    <updated>2020-12-06T15:02:48.827Z</updated>
+    <updated>2020-12-06T15:11:20.409Z</updated>
     
     <content type="html"><![CDATA[<p>함수형~ 함수형~ 여러 곳에서 이야기는 종종 들었지만 제대로 찾아본 적이 없다보니 기본적인 개념부터 많이 부족해서 간단히 스터디를 시작했다.</p><p>특정 언어를 선정해서 언어적 특성에 종속되기 보단 우선 함수형 프로그래밍의 패러다임에 대해서 먼저 학습 해보자.</p><hr><h2 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h2><p>함수형 프로그래밍은 크게 두 그룹으로 분류된다.</p><table><thead><tr><th>구분</th><th>지원범위</th><th>언어</th></tr></thead><tbody><tr><td>순수 함수형 언어</td><td>오직 함수형 패러다임만 지원</td><td>Haskell</td></tr><tr><td>불순 함수형 언어</td><td>함수형 패러다임과 명령형 프로그래밍을 지원</td><td>LISP</td></tr></tbody></table><p>그럼 여기서 명령형은 뭐고 함수형 패러다임은 뭘 말하는 걸까?</p><p>프로그래밍 패러다임은 크게 보면 2가지로 분류할 수 있다.</p><ol><li>명령형 프로그래밍 : 프로그래밍의 상태와 상태를 변경시키는 구문의 관점에서 연산을 설명하여 기능을 구현하기 위한 알고리즘을 명시하지만 결국 무엇을 해야하는지는 명시하지 않는다.<ul><li>절차지향 프로그래밍 : 수행되어야 할 연속적인 계산 과정을 포함 (C, C++)</li><li>객체지향 프로그래밍 : 객체들의 집합으로 프로그램의 상호작용을 표현 (C++, Java, C#)</li></ul></li><li>선언형 프로그래밍 : How(어떻게) 보단 What(무엇을) 해야하는지 설명하는 방식으로 알고리즘에 대해서 명시하진 않고 목표를 명시한다.<ul><li>함수형 프로그래밍 : 순수 함수를 조합하고 소프트웨어를 만드는 방식 (Clojure, Haskell, LISP)</li></ul></li></ol><p><strong><em>명령형 프로그래밍은 어떻게 할 것이가(How)를 표현하고, 선언형 프로그래밍은 무엇을 할것인가(What)를 표현한다.</em></strong></p><hr><h2 id="특성"><a href="#특성" class="headerlink" title="특성"></a>특성</h2><p>함수형 프로그래밍은 아래와 같은 특징을 같는다.</p><ul><li><p>계산을 수행하기 위해 조건식과 재귀를 사용하는 수학 함수의 개념에 따라 설계되었다.</p></li><li><p>고차함수<code>high order function</code>와 지연연산<code>lazy evaluation</code> 기능을 지원한다.</p><ol><li><h4 id="고차-함수"><a href="#고차-함수" class="headerlink" title="고차 함수"></a>고차 함수</h4><ul><li>람다 계산법에서 만들어진 용어로 아래 조건을 만족하는 함수<ul><li>함수에 함수를 파라미터로 전달할 수 있다.</li><li>함수의 반환값으로 함수를 사용할 수 있다.</li></ul></li><li>고차 함수는 <code>1급 함수</code>의 부분집합이다.</li></ul></li><li><h4 id="지연-연산"><a href="#지연-연산" class="headerlink" title="지연 연산"></a>지연 연산</h4><ul><li>불필요한 연산을 피하기 위해서 결과값이 필요한 시점까지 연산을 늦추는 것을 말한다.<ul><li>값을 미리 계산해서 저장하지 않기 때문에 메모리의 효율적인 사용이 가능</li></ul></li></ul></li></ol></li><li><p>루프문과 같은 흐름제어와 If-Else, Switch문과 같은 조건문을 지원하지 않고 함수와 함수호출을 직접 사용한다.</p></li><li><p>OOP와 마찬가지로 추상화, 캡슐화, 상속, 다형성과 같은 개념을 지원한다.</p></li></ul><hr><h2 id="장점"><a href="#장점" class="headerlink" title="장점"></a>장점</h2><ul><li><strong>Bugs-Free Code</strong> : State를 지원하지 않으므로 부작용이 없어서<code>no side-effect</code> 오류없는 코드작성이 가능하다.<del>(없다기 보단 그냥 적은게 맞을 것 같다.)</del></li><li><strong>효율적인 병렬 프로그래밍</strong> : 상태 변경이 없기 때문에 병렬로 작동하도록 기능에 대해서 프로그래밍할 수 있으며 이는 재사용 및 테스트를 더 쉽게 지원한다.</li><li><strong>효율성</strong> : 독립적인 유닛으로 구성되서 동시에 실행할 수 있다.</li><li><strong>중첩 함수 지원</strong> : 중첩함수를 지원한다.</li><li><strong>지연 연산</strong> : <code>Lazy List</code>, <code>Lazy Map</code> 등과 같은 지연 함수 구조를 지원한다.</li></ul><hr><h2 id="단점"><a href="#단점" class="headerlink" title="단점"></a>단점</h2><ul><li>큰 메모리 공간이 필요하며 상태가 없기 때문에 작업을 수행할 때마다 새 객체를 만들어야한다.</li></ul><hr><h2 id="함수형-vs-객체지향"><a href="#함수형-vs-객체지향" class="headerlink" title="함수형 vs 객체지향"></a>함수형 vs 객체지향</h2><table><thead><tr><th>함수형</th><th>OOP</th></tr></thead><tbody><tr><td>불변 데이터 사용</td><td>가변 데이터 사용</td></tr><tr><td>선언적 프로그래밍 모델</td><td>명령형 프로그래밍 모델</td></tr><tr><td><code>무엇을 하는가</code>에 초점</td><td><code>어떻게 하는가</code> 에 초점</td></tr><tr><td>병렬 프로그래밍 지원</td><td>병렬 프로그래밍에 적합하지 않음</td></tr><tr><td>부작용이 없다</td><td>부작용이 발생할 수 있다.</td></tr><tr><td>함수 호출 및 재귀를 사용하여 흐름 제어</td><td>루프와 조건문을 사용하서 흐름 제어</td></tr><tr><td>재귀를 사용한 반복</td><td>루프를 사용한 반복</td></tr><tr><td>실행순서가 중요하지 않다.</td><td>실행 순서가 매우 중요하다.</td></tr><tr><td>데이터 추상화, 동작 추상화 지원</td><td>데이터 추상화만 지원</td></tr></tbody></table><p>이상으로 함수형 프로그래밍에 대한 대략적인 개요에 대해서만 우선 정리해 보았다.</p><hr><p><strong><em>Reference</em></strong></p><p><a href="https://www.tutorialspoint.com/functional_programming/functional_programming_introduction.htm">tutorialspoint - Lean Functional Programming</a></p><p><a href="https://velog.io/@kyusung/%ED%95%A8%EC%88%98%ED%98%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%9A%94%EC%95%BD">함수형 프로그래밍 요약</a></p><p><a href="https://engineering.linecorp.com/ko/blog/functional-programing-language-and-line-game-cloud/">함수형 프로그래밍 언어에 대한 고찰</a></p>]]></content>
     
@@ -34,6 +34,14 @@
     
     
     
+    <category term="programming" scheme="https://yoo0926.github.io/categories/programming/"/>
+    
+    <category term="functional" scheme="https://yoo0926.github.io/categories/programming/functional/"/>
+    
+    
+    <category term="programming" scheme="https://yoo0926.github.io/tags/programming/"/>
+    
+    <category term="functional" scheme="https://yoo0926.github.io/tags/functional/"/>
     
   </entry>
   

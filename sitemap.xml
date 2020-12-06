@@ -67,6 +67,34 @@
   </url>
   
   <url>
+    <loc>https://yoo0926.github.io/tags/functional/</loc>
+    <lastmod>2020-12-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yoo0926.github.io/tags/prograaming/</loc>
+    <lastmod>2020-12-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yoo0926.github.io/tags/spring/</loc>
+    <lastmod>2020-12-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yoo0926.github.io/tags/git/</loc>
+    <lastmod>2020-12-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://yoo0926.github.io/tags/etc/</loc>
     <lastmod>2020-12-06</lastmod>
     <changefreq>daily</changefreq>
@@ -87,27 +115,6 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>https://yoo0926.github.io/tags/git/</loc>
-    <lastmod>2020-12-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://yoo0926.github.io/tags/prograaming/</loc>
-    <lastmod>2020-12-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://yoo0926.github.io/tags/spring/</loc>
-    <lastmod>2020-12-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
   
   <url>
@@ -118,21 +125,7 @@
   </url>
   
   <url>
-    <loc>https://yoo0926.github.io/categories/etc/</loc>
-    <lastmod>2020-12-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://yoo0926.github.io/categories/programming/postgresql/</loc>
-    <lastmod>2020-12-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://yoo0926.github.io/categories/etc/blog/</loc>
+    <loc>https://yoo0926.github.io/categories/programming/spring/</loc>
     <lastmod>2020-12-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -146,7 +139,28 @@
   </url>
   
   <url>
-    <loc>https://yoo0926.github.io/categories/programming/spring/</loc>
+    <loc>https://yoo0926.github.io/categories/programming/postgresql/</loc>
+    <lastmod>2020-12-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yoo0926.github.io/categories/programming/functional/</loc>
+    <lastmod>2020-12-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yoo0926.github.io/categories/etc/</loc>
+    <lastmod>2020-12-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yoo0926.github.io/categories/etc/blog/</loc>
     <lastmod>2020-12-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
