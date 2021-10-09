@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
 @-moz-keyframes spinAround {
   from {
     transform: rotate(0deg);
@@ -11652,4 +11653,3 @@ figure.highlight .section {
     padding: 1.5rem 1rem;
   }
 }
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
