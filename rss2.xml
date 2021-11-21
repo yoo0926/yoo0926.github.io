@@ -9,8 +9,40 @@
     <atom:link href="https://yoo0926.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>티끌모아 태산이라 티끌부터 모아본다.</description>
-    <pubDate>Sun, 21 Nov 2021 10:19:36 GMT</pubDate>
+    <pubDate>Sun, 21 Nov 2021 11:34:33 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>카카오톡 오픈그래프 캐시 삭제 방법</title>
+      <link>https://yoo0926.github.io/2021/11/21/blog/ogimage-reset/</link>
+      <guid>https://yoo0926.github.io/2021/11/21/blog/ogimage-reset/</guid>
+      <pubDate>Sun, 21 Nov 2021 11:11:48 GMT</pubDate>
+      
+        
+        
+      <description>&lt;p&gt;블로그 대표 이미지를 변경했음에도 카카오톡에 공유 시 기존 이미지가 계속 나오는 문제가 있었다.&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;
+  &lt;img src=&quot;/img/blog/ogimage-reset/link_image1.p</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<p>블로그 대표 이미지를 변경했음에도 카카오톡에 공유 시 기존 이미지가 계속 나오는 문제가 있었다.</p><p style="text-align:center">  <img src="/img/blog/ogimage-reset/link_image1.png" alt="블로그 링크 이미지 변경 전"></p><p>사이트의 소스코드의 태그를 확인해봐도, 오픈그래프 적용을 확인해볼수 있는 페이스북의 <a href="https://developers.facebook.com/tools/debug/">Sharing Debugger</a> 사이트에서도 확인했을 때 문제가 없었으니</p><p>카카오에서 이미지 캐시가 문제라고 생각되서 구글링을 해봤고 역시 삭제하는 방법을 찾을 수 있었다.</p><h2 id="삭제방법"><a href="#삭제방법" class="headerlink" title="삭제방법"></a>삭제방법</h2><ol><li><p>카카오 개발자 사이트의 초기화 도구에서 <a href="https://developers.kakao.com/tool/clear/og">OG(Open Graph) 캐시</a>로 들어간다.</p></li><li><p>개발자 계정이 없다면 카카오 계정으로 간단하게 가입하고 있으면 로그인</p></li><li><p>삭제하려는 URL을 입력하고 초기화 한다.</p></li></ol><p style="text-align:center">  <img src="/img/blog/ogimage-reset/kakao_og_cache.png" alt="og 캐시 초기화"></p><p>이제 다시 카카오톡에 링크를 공유해보면 바뀐 이미지가 나오는걸 확인할 수 있다.</p><p style="text-align:center">  <img src="/img/blog/ogimage-reset/link_image2.png" alt="블로그 링크 이미지 변경 후"></p><hr><p>참고로 open graph 라는건 html 메타 태그의 종류 중 하나로 사용자가 링크를 sns의 입력창에 입력하면 크롤러가 미리 그 웹사이트를 방문해서 HTML head의 오픈그래프 메타 데이터를 긁어온다.</p><p>og:title, og:description, og:image 등 태그의 데이터를 바탕으로 미리보기 이미지와 설명을 만들어서 보여주게 된다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://yoo0926.github.io/categories/blog/">blog</category>
+      
+      
+      <category domain="https://yoo0926.github.io/tags/blog/">blog</category>
+      
+      <category domain="https://yoo0926.github.io/tags/open-graph/">open graph</category>
+      
+      <category domain="https://yoo0926.github.io/tags/kakaotalk/">kakaotalk</category>
+      
+      
+      <comments>https://yoo0926.github.io/2021/11/21/blog/ogimage-reset/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Angular 개요</title>
