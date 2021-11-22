@@ -221,6 +221,34 @@
     </item>
     
     <item>
+      <title>JWT 개요 간단 정리</title>
+      <link>https://yoo0926.github.io/2021/04/23/spring/spring-security/jwt-1/</link>
+      <guid>https://yoo0926.github.io/2021/04/23/spring/spring-security/jwt-1/</guid>
+      <pubDate>Thu, 22 Apr 2021 15:07:49 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;1-JWT-Json-Web-Token-란&quot;&gt;&lt;a href=&quot;#1-JWT-Json-Web-Token-란&quot; class=&quot;headerlink&quot; title=&quot;1. JWT(Json Web Token)란&quot;&gt;&lt;/a&gt;1. JWT(Json Web Tok</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="1-JWT-Json-Web-Token-란"><a href="#1-JWT-Json-Web-Token-란" class="headerlink" title="1. JWT(Json Web Token)란"></a>1. JWT(Json Web Token)란</h1><p>JSON 객체를 사용해서 토큰 자체에 정보들을 저장하고 있는 Web Token 으로 가벼운 인증으로 사용이 쉽다. 일반적으로 클라이언트와 서버, 서비스와 서비스 사이 통신을 할 때 권한 인가(Authorization)을 위해서 사용된다.</p><h1 id="2-구조"><a href="#2-구조" class="headerlink" title="2. 구조"></a>2. 구조</h1><ul><li>Header : Signature를 해싱하기 위한 알고리즘 정보<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;alg&quot;</span> : <span class="string">&quot;HS256&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;typ&quot;</span> : <span class="string">&quot;JWT&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li>Payload : 서버와 클라이언트가 주고받는, 시스템에서 실제로 사용될 정보에 대한 내용들<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;name&quot;</span> : <span class="string">&quot;jy&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;iat&quot;</span> : <span class="number">1422779638</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li>Signature : 토큰의 유효성 검증을 위한 문자열로 헤더와 페이로드를 합친 문자열을 서명한 값이다. 헤더의 alg에 정의된 알고리즘과 secret을 이용해 해싱하고 이 값을 다시 base64 인코딩하여 생성한다.<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">HMAC-SHA256(</span><br><span class="line"> secret,</span><br><span class="line"> base64urlEncoding(header) + &#x27;.&#x27; +</span><br><span class="line"> base64urlEncoding(payload)</span><br><span class="line">)</span><br></pre></td></tr></table></figure></li></ul><p>이 세 부분은 각각 Base64 인코딩을 사용하여 점을 사용해서 연결되면 JWT가 완성되며 주로 HTTP 통신 시 <code>Authorization</code> key의 value 로 사용된다.</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">                            <span class="comment">//Header                             Payload                                  Signature</span></span><br><span class="line">  <span class="attr">&quot;Authorization&quot;</span>: <span class="string">&quot;Bearer &#123;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiankiLCJpYXQiOjE0MjI3Nzk2Mzh9.SNKm-Pcut8DUMBmeQXdIJlM_wFkh4jYd5YtRT369JdI&#125;&quot;</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="3-장점과-단점"><a href="#3-장점과-단점" class="headerlink" title="3. 장점과 단점"></a>3. 장점과 단점</h1><ul><li><p>장점</p><ul><li>중앙의 인증서버, 데이터 스토어에 대한 의존성이 없어서 시스템의 수평확장에 유리하다.</li><li>Base64 URL Safe Encoding을 사용하여 URL, Cookie, Header 어디에서든 모두 사용 가능하다.</li></ul></li><li><p>단점</p><ul><li>Payload의 정보가 많아지면 네트워크 사용량이 증가하여 데이터 설계 고려 필요</li><li>토큰이 클라이언트에 저장되서 서버에서 클라이언트의 토큰을 조작할 수 없다.</li></ul></li></ul>]]></content:encoded>
+      
+      
+      <category domain="https://yoo0926.github.io/categories/spring/">spring</category>
+      
+      <category domain="https://yoo0926.github.io/categories/spring/spring-security/">spring-security</category>
+      
+      
+      <category domain="https://yoo0926.github.io/tags/JWT/">JWT</category>
+      
+      
+      <comments>https://yoo0926.github.io/2021/04/23/spring/spring-security/jwt-1/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
       <title>4.머스테치로 화면 구성하기</title>
       <link>https://yoo0926.github.io/2021/04/22/spring/book/%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/4/</link>
       <guid>https://yoo0926.github.io/2021/04/22/spring/book/%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/4/</guid>
