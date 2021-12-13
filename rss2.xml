@@ -9,8 +9,37 @@
     <atom:link href="https://yoo0926.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>티끌모아 태산이라 티끌부터 모아본다.</description>
-    <pubDate>Sat, 04 Dec 2021 09:10:09 GMT</pubDate>
+    <pubDate>Mon, 13 Dec 2021 14:55:37 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Google Tag Manager 간단 정리</title>
+      <link>https://yoo0926.github.io/2021/12/13/web/gtm-1/</link>
+      <guid>https://yoo0926.github.io/2021/12/13/web/gtm-1/</guid>
+      <pubDate>Mon, 13 Dec 2021 14:07:12 GMT</pubDate>
+      
+        
+        
+      <description>&lt;p&gt;웹사이트 또는 모바일 앱에서 &lt;code&gt;태그&lt;/code&gt;라고 통칭되는 &lt;strong&gt;추적 코드 및 관련 코드 조각&lt;/strong&gt;을 쉽고 빠르게 업데이트할 수 있는 태그 관리 시스템&lt;/p&gt;
+&lt;p&gt;여기서 태그는 웹페이지의 HTML 태그를 말하는게 </description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<p>웹사이트 또는 모바일 앱에서 <code>태그</code>라고 통칭되는 <strong>추적 코드 및 관련 코드 조각</strong>을 쉽고 빠르게 업데이트할 수 있는 태그 관리 시스템</p><p>여기서 태그는 웹페이지의 HTML 태그를 말하는게 아니고 마케팅 업계에서 <strong>자바스크립트로 데이터를 수집해서 웹 분석 및 광고 성과 추적용도로 사용하기 위해 서비스 제공업체(구글,네이버,페이스북 등)로 전달하는 역할을 수행하는 기능</strong>을 말한다.</p><p><code>컨테이너 코드 스니펫</code>(컨테이너 생성 시 헤더, 바디에 심으라고 하는 코드)이라는 기본 스크립트를 소스코드에 한번 추가하면 이후 개발자가 관여하지 않더라도 GTM에서 제공하는 UI를 통해 태그를 효율적으로 추가,삭제,변경 등 관리하기 위해 사용한다.</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Google Tag Manager --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript">(<span class="function"><span class="keyword">function</span>(<span class="params">w,d,s,l,i</span>)</span>&#123;w[l]=w[l]||[];w[l].push(&#123;<span class="string">&#x27;gtm.start&#x27;</span>:</span></span><br><span class="line"><span class="javascript"><span class="keyword">new</span> <span class="built_in">Date</span>().getTime(),<span class="attr">event</span>:<span class="string">&#x27;gtm.js&#x27;</span>&#125;);<span class="keyword">var</span> f=d.getElementsByTagName(s)[<span class="number">0</span>],</span></span><br><span class="line"><span class="javascript">j=d.createElement(s),dl=l!=<span class="string">&#x27;dataLayer&#x27;</span>?<span class="string">&#x27;&amp;l=&#x27;</span>+l:<span class="string">&#x27;&#x27;</span>;j.async=<span class="literal">true</span>;j.src=</span></span><br><span class="line"><span class="javascript"><span class="string">&#x27;https://www.googletagmanager.com/gtm.js?id=&#x27;</span>+i+dl;f.parentNode.insertBefore(j,f);</span></span><br><span class="line"><span class="javascript">&#125;)(<span class="built_in">window</span>,<span class="built_in">document</span>,<span class="string">&#x27;script&#x27;</span>,<span class="string">&#x27;dataLayer&#x27;</span>,<span class="string">&#x27;GTM-A123456&#x27;</span>);</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- End Google Tag Manager --&gt;</span></span><br></pre></td></tr></table></figure><h2 id="컨테이너"><a href="#컨테이너" class="headerlink" title="컨테이너"></a>컨테이너</h2><p>태그를 관리하는 프로젝트 단위로 일반적으로 도메인별로 생성하며 <code>태그</code>,<code>트리거</code>,<code>변수</code> 3가지 요소를 사용해서 데이터를 추적</p><h2 id="변수-How"><a href="#변수-How" class="headerlink" title="변수(How)"></a>변수(How)</h2><p>특정 값을 담아두는 가상의 메모리 영역으로 어떠한 데이터를 수집할 지 지정하고 여러 이벤트에서 재사용하여 효율증가</p><blockquote><p>ex) 특정 페이지에 접속할때, 클릭할때 데이터를 수집할 경우 사전 정의된 url이라는 변수는 현재 로드중인 페이지의 URL을 변수로 사용할 수 있다.</p></blockquote><ul><li>트리거 : <strong>태그 실행 조건을 지정하는 필터를 정의하는 용도</strong> (ex: url 변수가 ‘example.com/index.html’일 때 페이지뷰 트리거를 실행하는 용도)</li><li>태그 : <strong>동적 값을 포착하여 전송</strong>하는 데 변수가 사용 (ex: 거래 금액과 구매 제품을 전환추적 태그에 전달하는 용도)</li></ul><p>기본 제공하는 변수로 처리할 수 없는 특정 요구사항에 맞추고 싶다면 <strong>사용자 정의 변수</strong>를 생성할 수 있다.</p><h2 id="트리거-When"><a href="#트리거-When" class="headerlink" title="트리거(When)"></a>트리거(When)</h2><p>태그(명령어)가 실행되는 조건을 정의하여 조건 충족 시 연결된 태그가 실행</p><blockquote><p>ex) 페이지뷰, 클릭할때 등 이벤트 실행 조건</p></blockquote><h2 id="태그-What"><a href="#태그-What" class="headerlink" title="태그(What)"></a>태그(What)</h2><p>데이터를 추적하여 수집하기 위해 명령하는 명령어의 역할로 트리거의 조건이 충족되면 태그가 인식하여 데이터를 추적하여 Google Analytics 등의 툴에서 데이터를 수집</p><p>쉽게 생각해서 트리거가 실행 조건을 담고 있고 태그는 실행 내용을 담고 있다고 생각하면 된다.</p><h2 id="데이터-영역-dataLayer"><a href="#데이터-영역-dataLayer" class="headerlink" title="데이터 영역(dataLayer)"></a>데이터 영역(dataLayer)</h2><p>웹사이트에서 태그 관리자 컨테이너로 정보를 전달할 때 사용되는 자바스크립트 객체</p><blockquote><p>웹사이트 –&gt; dataLayer &lt;–&gt; GTM –&gt; 구글 애널리틱스, 네이버광고 등</p></blockquote><p>구글 애널리틱스 사용 시 전자상거래 구매 데이터, 맞춤 측정기준에서 사용하는 데이터 등은 기본 추적코드만으로는 수집할 수 없어 추가적인 설정이 필요하다.</p><p>이때 주로 웹페이지 내 별도의 추적 코드를 소스코드에 삽입하여 이들 정보를 GA서버로 직접 보내는 방식을 사용하는데 GTM에선 이런 정보를 수집할 때 데이터 영역을 주로 사용한다.</p><p>코드 스니펫을 header에 추가하고</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.dataLayer = <span class="built_in">window</span>.dataLayer || [];</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure><p><code>dataLayer.push()</code> 명령어를 사용하면 데이터 영역에 정보를 추가할 수 있다.</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;dataLayer.push(&#123;</span></span></span><br><span class="line"><span class="tag"><span class="string">    &#x27;bookCategory&#x27;: &#x27;fiction&#x27;,</span></span></span><br><span class="line"><span class="tag"><span class="string">    &#x27;bookTitle&#x27;: &#x27;Cien años de soledad&#x27;,</span></span></span><br><span class="line"><span class="tag"><span class="string">    &#x27;bookAuthor&#x27;: &#x27;Gabriel García Márquez&#x27;</span></span></span><br><span class="line"><span class="tag"><span class="string">&#125;);&quot;</span>&gt;</span>도서 세부정보<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure><p>주의사항으로 GTM은 <code>컨테이너 스니펫</code> 실행 시 자동으로 데이터영역을 생성하며 이미 있는 경우 그 안의 변수를 가져다 사용하기 때문에 데이터영역은 GTM 컨테이너 스니펫보다 앞에 위치해야 한다고 한다.</p><hr><ul><li><p>그 외 태그,트리커,변수 생성 과정에 대한 자세한 방법은 아래 링크 참고</p><p>  <a href="https://marketology.co.kr/all-category/tag-manager/%EA%B5%AC%EA%B8%80-%ED%83%9C%EA%B7%B8-%EA%B4%80%EB%A6%AC%EC%9E%90-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%82%AC%EC%9A%A9%EB%B2%95/">구글-태그-관리자-설치-및-사용법</a></p></li><li><p>태그, 트리거, 변수에서 설정가능한 유형에 대해선 태그 관리자 고객센터에서 각 항목 참고</p><ul><li><a href="https://support.google.com/tagmanager/?hl=ko#topic=3441647">태그 관리자 고객센터</a></li></ul></li></ul>]]></content:encoded>
+      
+      
+      <category domain="https://yoo0926.github.io/categories/web/">web</category>
+      
+      
+      <category domain="https://yoo0926.github.io/tags/web/">web</category>
+      
+      <category domain="https://yoo0926.github.io/tags/GTM/">GTM</category>
+      
+      
+      <comments>https://yoo0926.github.io/2021/12/13/web/gtm-1/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>4-2. 리액터 프로젝트 심화학습</title>
@@ -593,37 +622,6 @@
       
       
       <comments>https://yoo0926.github.io/2020/12/07/functional/%EA%B0%9C%EC%9A%94/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>PostgreSQL 테이블 중복데이터 제거</title>
-      <link>https://yoo0926.github.io/2020/11/23/sql/postgresql/%EC%A4%91%EB%B3%B5-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%9C%EA%B1%B0/</link>
-      <guid>https://yoo0926.github.io/2020/11/23/sql/postgresql/%EC%A4%91%EB%B3%B5-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%9C%EA%B1%B0/</guid>
-      <pubDate>Sun, 22 Nov 2020 15:40:41 GMT</pubDate>
-      
-        
-        
-      <description>&lt;p&gt;설계, 운영이 잘 되는 DB에선 많이 발생하는 문제는 아닐테지만 테이블의 특정 컬럼값을 기준으로 중복된 데이터를 삭제해야 하는 경우가 있다.&lt;/p&gt;
-&lt;p&gt;필자의 경우 PostgreSQL을 사용하던 중 이전 담당자가 테이블을 TEST_01_TB ~</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<p>설계, 운영이 잘 되는 DB에선 많이 발생하는 문제는 아닐테지만 테이블의 특정 컬럼값을 기준으로 중복된 데이터를 삭제해야 하는 경우가 있다.</p><p>필자의 경우 PostgreSQL을 사용하던 중 이전 담당자가 테이블을 TEST_01_TB ~ TEST_10_TB 이런식으로 물리적으로 10개로 나눠서 설계하여 사용하던걸 인수받았는데 감리 검수에서 10개의 테이블을 하나로 합치라는 개선안내를 받았다.</p><p><code>Hash Partition</code>을 적용하여 테이블을 합쳤으나 파티션을 적용하니 기존에 복합키로 사용하던 <code>Unique</code> 조건이나 데이터를 생성 시 Insert쿼리문에서 <code>ON CONFLICT 컬럼 DO NOTHING</code> 옵션도 적용할 수 없어서 빠지게 되었는데 이 때문에 중복데이터가 발생하였다.</p><p>중복된 데이터를 어떻게 찾아서 지우느냐에 따라 수행시간에 큰 차이가 날거라고 생각해서 구글링을 해보니 몇가지 방법을 찾을 수 있었다.</p><p><em><strong>Test Table Schema</strong></em></p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> MEMBER_TB (</span><br><span class="line">MEM_ID BIGSERIAL <span class="keyword">PRIMARY</span> KEY,</span><br><span class="line">MEM_NAME <span class="type">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    MEM_PNUM <span class="type">VARCHAR</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    MEM_EMAIL TEXT <span class="keyword">NOT</span> <span class="keyword">NULL</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> BLACKLIST_TB (</span><br><span class="line">    MEM_PNUM <span class="type">VARCHAR</span>(<span class="number">11</span>) <span class="keyword">PRIMARY</span> KEY</span><br><span class="line">);</span><br></pre></td></tr></table></figure><p><em><strong>ROW_NUMBER()</strong></em></p><p>유저 테이블에의 MEM_PNUM 컬럼을 기준으로 중복된 데이터가 있어서 이를 지우기 위해선 어떻게 해야할까? 구글링을 하고 제일먼저 찾은 방법은 <code>ROW_NUMBER()</code> 를 활용한 방법이었다.</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> MEMBER_TB</span><br><span class="line"><span class="keyword">WHERE</span> MEM_ID <span class="keyword">IN</span> ( <span class="keyword">SELECT</span> MEM_ID </span><br><span class="line">                 <span class="keyword">FROM</span> (<span class="keyword">SELECT</span> MEM_ID,</span><br><span class="line">                       <span class="built_in">ROW_NUMBER</span>() <span class="keyword">OVER</span>(<span class="keyword">PARTITION</span> <span class="keyword">BY</span> MEM_PNUM <span class="keyword">ORDER</span> <span class="keyword">BY</span> MEM_ID ) RNUM</span><br><span class="line">                       <span class="keyword">FROM</span> MEMBER_TB )</span><br><span class="line">                <span class="keyword">WHERE</span> RNUM <span class="operator">&gt;</span> <span class="number">1</span> </span><br><span class="line">             );</span><br></pre></td></tr></table></figure><p>바로 적용할까 싶었지만 타겟 테이블의 데이터건수는 수십억개라 좀 더 빠른 방법이 없는지 더 찾아보던 중 <code>Self Join</code>과 <code>Delete Using</code>을 활용한 방법을 찾을 수 있었다.</p><p><em><strong>DELETE USING</strong></em></p><p>특정 테이블을 참조하여 데이터를 삭제할 때 <code>PostgreSQL</code>의 경우 <code>MySQL</code>처럼 <code>DELETE JOIN</code>을 제공하진 않지만 <code>USING</code>을 사용하여 <code>DELETE JOIN</code>과 유사한 기능을 지원한다.</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> MEMBER_TB T1</span><br><span class="line"><span class="keyword">USING</span> BLACKLIST_TB T2</span><br><span class="line"><span class="keyword">WHERE</span> T1.MEM_PNUM <span class="operator">=</span> T2.MEM_PNUM;</span><br></pre></td></tr></table></figure><p>예를 들면 이 처럼 <code>USING</code> 키워드를 사용하여 특정 테이블을 참조하여 유저테이블에서 블랙리스트 유저정보만 지울 수 있다.</p><p>그럼 여기서 SELF JOIN을 활용하여 MEM_PNUM, MEM_EMAIL 컬럼의 중복데이터를 삭제하고 싶으면 SQL문을 다음과 같은 식으로 작성할 수 있다.</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> MEMBER_TB T1</span><br><span class="line"><span class="keyword">USING</span> MEMBER_TB T2</span><br><span class="line"><span class="keyword">WHERE</span> T1.CTID <span class="operator">&lt;</span> T2.CTID</span><br><span class="line">  <span class="keyword">AND</span> T1.MEM_PNUM <span class="operator">=</span> T2.MEM_PNUM</span><br><span class="line">  <span class="keyword">AND</span> T1.MEM_EMAIL <span class="operator">=</span> T2.MEM_EMAIL;</span><br></pre></td></tr></table></figure><p>참고한 자료에선 1000만건의 데이터 중 10만건이 중복발생했을 때 약 42초정도 걸렸다고 했고 적용 전 확인해보기 위해 샘플로 Row가 약 800만에 중복데이터가 32만건 정도 들어있는 테이블로 테스트를 해보니 쿼리 실행에 약 1분정도 소요된 것을 확인하고 본래 타겟 테이블에 적용하였다.</p><p>그 후 데이터 생성 로직을 변경하여 중복데이터가 들어올 수 없도록 수정하였고 설계와 테스트를 더 잘 해야겠다는 생각이 절실하게 드는 하루였다.</p><p><em><strong>Reference</strong></em><br><a href="https://www.postgresqltutorial.com/postgresql-delete-join/">PostgreSQL DELETE JOIN</a></p><p><a href="https://rfriend.tistory.com/386">중복된 관측치 제거하기</a></p><p><a href="https://techmango.org/2018/10/08/how-to-delete-duplicate-rows-in-postgresql/">How to delete duplicate rows in postgresql?</a></p>]]></content:encoded>
-      
-      
-      <category domain="https://yoo0926.github.io/categories/sql/">sql</category>
-      
-      <category domain="https://yoo0926.github.io/categories/sql/postgresql/">postgresql</category>
-      
-      
-      <category domain="https://yoo0926.github.io/tags/sql/">sql</category>
-      
-      <category domain="https://yoo0926.github.io/tags/postgresql/">postgresql</category>
-      
-      
-      <comments>https://yoo0926.github.io/2020/11/23/sql/postgresql/%EC%A4%91%EB%B3%B5-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%9C%EA%B1%B0/#disqus_thread</comments>
       
     </item>
     
