@@ -9,7 +9,7 @@
     <atom:link href="https://yoo0926.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>티끌모아 태산이라 티끌부터 모아본다.</description>
-    <pubDate>Sun, 14 May 2023 09:06:12 GMT</pubDate>
+    <pubDate>Sun, 14 May 2023 14:50:58 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -55,7 +55,7 @@
       
       
       
-      <content:encoded><![CDATA[<p>계층형 아키텍처의 대안을 이야기 하기전에 SOLID 원칙의 ‘S’와 ‘D’를 담당하는 아래 원칙들을 먼저 살펴보자.</p><h3 id="단일-책임-원칙-Single-Responsibility-Principle-SRP"><a href="#단일-책임-원칙-Single-Responsibility-Principle-SRP" class="headerlink" title="단일 책임 원칙(Single Responsibility Principle, SRP)"></a>단일 책임 원칙(Single Responsibility Principle, SRP)</h3><ul><li>하나의 컴포넌트는 오로지 한 가지 일만 해야 하고, 그것을 올바르게 수행해야 한다.<ul><li>이 말은 실제 의도와는 조금 다른 오해가 발생할 여지가 있으니 아래 정의가 좀 더 정확하다고 볼 수 있다.</li></ul></li><li>컴포넌트를 변경하는 이유는 오직 하나뿐이어야 한다.</li></ul><p>만약 컴포넌트를 변경할 이유가 한 가지라면 우리가 “어떤 다른 이유로” 소프트웨어를 변경하더라도 이 컴포넌트에 대해선 전혀 신경 쓸 필요가 없다.</p><p>하지만 변경할 이유라는건 컴포넌트 간의 의존성을 통해 너무 쉽게 전파된다.<br>A 컴포넌트는 B,C,D,E에 의존하고 E는 다른 의존성이 없다면<br>A는 다른 B,C,D,E가 바뀔 때 함께 바뀌어야 하지만 E는 E에 기능이 추가,변경될 때만 바뀌게 될 것이다.</p><h3 id="의존성-역전-원칙-Dependency-Inversion-Principle-DIP"><a href="#의존성-역전-원칙-Dependency-Inversion-Principle-DIP" class="headerlink" title="의존성 역전 원칙(Dependency Inversion Principle, DIP)"></a>의존성 역전 원칙(Dependency Inversion Principle, DIP)</h3><p>계층형에서 계층 간 의존성은 항상 다음 계층인 아래 방향을 가리킨다. 단일 책임 원칙을 고수준에서 적용할 경우 상위 계층들이 하위 계층들에 비해 변경할 이유가 더 많다.</p><p>그러므로 영속성 계층에 대한 도메인 계층의 의존성 때문에 영속성 계층을 변경할 때마다 잠재적으로 도메인 계층도 변경해야 한다. 하지만 도메인 코드는 애플리케이션에서 가장 중요한 코드인데 영속성 코드가 바뀐다고 도메인 코드까지 바꾸는게 맞을까? 이 의존성은 어떻게 제거할 수 있을까? 의존성 역전 원칙은 말 그대로의 의미이다.</p><ul><li>코드 상의 어떤 의존성이든 그 방향을 바꿀 수(역전시킬 수) 있다.<ul><li>단, 서드파티 라이브러리처럼 제어할 수 없는 코드에 의존성을 가지고 있다면 역전이 불가능하다.</li></ul></li></ul><p>일반적으로 보기 쉬운 계층형 구조의 서비스가 있다. 도메인 계층의 서비스는 영속성 계층의 엔티티와 리포지토리와 상호작용한다.</p><p>엔티티는 도메인 객체를 표현하고 도메인 코드는 이러한 엔티티의 상태를 변경하는 일을 중심으로 하니까 일단 엔티티를 도메인 계층으로 올려보면 영속성의 리포지토리가 도메인의 엔티티를 의존하는 순환의존성이 생기게 된다.</p><p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2f1fcfa6-7c45-42e5-84a5-ab2e37f264ec/SmartSelect_20230301_164545_Samsung_Notes.jpg" alt="SmartSelect_20230301_164545_Samsung Notes.jpg"></p><p>여기서 DIP를 적용하면 도메인 계층에 리포지토리에 대한 인터페이스를 만들고, 실제 리포지토리는 영속성 계층에서 구현하게 하는 것이다.</p><p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2cbdcd01-5eee-4ffb-b003-8b62a2eb7ba2/SmartSelect_20230301_164632_Samsung_Notes.jpg" alt="SmartSelect_20230301_164632_Samsung Notes.jpg"></p><p>이제 도메인 계층에 인터페이스를 도입함으로써 의존성을 역전시켜서 도메인 로직은 영속성 코드에 의존하지 않고 영속성 계층이 도메인 계층에 의존하게 된다.</p><h3 id="클린-아키텍처"><a href="#클린-아키텍처" class="headerlink" title="클린 아키텍처"></a>클린 아키텍처</h3><p>도메인 코드가 바깥으로 향하는 어떤 의존성도 없어야 함을 의미한다. 대신 의존성 역전 원칙의 도움으로 모든 의존성이 도메인 코드를 향하고 있다.</p><p>클린 아키텍처의 코어에는 주변 유스케이스에서 접근하는 도메인 엔티티들이 있다. 유스케이스는 서비스를 의미하는데 단일 책임을 갖기 위해 좀 더 세분화 시켜서 넓은 서비스 문제를 피한다.</p><p>도메인 코드에선 어떤 영속성 프레임워크나 UI 프레임워크가 사용되는지 알 수 없기 때문에 특정 프레임워크에 특화된 코드를 가질 수 없고 비즈니스 규칙에 집중할 수 있어서 자유롭게 모델링할 수 있다.</p><p>다만, 도메인 계층이 영속성이나 UI 같은 외부 계층과 철저하게 분리돼야 하므로 애플리케이션의 엔티티에 대한 모델을 각 계층에서 유지보수 해야 한다.</p><p>영속성에서 ORM을 사용하는 경우, 도메인 계층과 영속성 계층이 데이터를 주고받을 때, 두 계층에 각각 엔티티 클래스를 만들어서 서로 변환해야 하는데 이는 바람직한 방향이다.</p><p>특정 프레임워크에 특화된 문제로부터 해방시키고자 했던, 결합이 제거된 상태이다.</p><p>클린 아키텍처는 약간 추상적인 느낌이 강해서 이 원칙들을 좀 더 구체적으로 만들어주는 ‘육각형 아키텍처(헥사고날 아키텍처)’에 대해서 살펴보자.</p><h3 id="육각형-아키텍처-헥사고날-아키텍처"><a href="#육각형-아키텍처-헥사고날-아키텍처" class="headerlink" title="육각형 아키텍처(헥사고날 아키텍처)"></a>육각형 아키텍처(헥사고날 아키텍처)</h3><p>애플리케이션 코어가 각 어댑터와 상호작용하기 위해 특정 포트를 제공하기 때문에 ‘포트와 어댑터 아키텍처라고도 불린다. 꼭 육각형의 모양이 중요한건 아니고 팔각형이어도 상관없다.</p><p>육각형 안에는 도메인 엔티티와 이와 상호작용하는 유스케이스가 있다. 외부로 향하는 의존성이 없고 모든 의존성은 코어를 향한다.</p><p>육각형 바깥에는 웹 브라우저와 상호작용하는 웹 어댑터, 데이터베이스와 상호작용하는 영속성 어댑터, 외부 시스템와 상호작용하는 어댑터 등 애플리케이션과 상호작용하는 다양한 어댑터들이 있다.</p><p>코어와 어댑터들 간의 통신이 가능하려면 애플리케이션 코어가 각각의 포트를 제공해야 한다.</p><p>주도하는 어댑터에게는 포트가 코어에 있는 유스케이스 클래스들에  의해 구현되고 호출되는 인터페이스가 될 것이고, 주도되는 어댑터에는 어댑터에 의해 구현되고 코어에 의해 호출되는 인터페이스가 될 것이다.</p><p>이러한 아키텍처의 목적은 결국 도메인 코드가 바깥쪽 코드에 의존하지 않게 함으로써 영속성과 UI에 특화된 모든 문제로부터 도메인 로직의 결합을 제거하고 코드를 변경할 이유의 수를 줄이는 효과가 있다.</p>]]></content:encoded>
+      <content:encoded><![CDATA[<p>계층형 아키텍처의 대안을 이야기 하기전에 SOLID 원칙의 ‘S’와 ‘D’를 담당하는 아래 원칙들을 먼저 살펴보자.</p><h3 id="단일-책임-원칙-Single-Responsibility-Principle-SRP"><a href="#단일-책임-원칙-Single-Responsibility-Principle-SRP" class="headerlink" title="단일 책임 원칙(Single Responsibility Principle, SRP)"></a>단일 책임 원칙(Single Responsibility Principle, SRP)</h3><ul><li>하나의 컴포넌트는 오로지 한 가지 일만 해야 하고, 그것을 올바르게 수행해야 한다.<ul><li>이 말은 실제 의도와는 조금 다른 오해가 발생할 여지가 있으니 아래 정의가 좀 더 정확하다고 볼 수 있다.</li></ul></li><li>컴포넌트를 변경하는 이유는 오직 하나뿐이어야 한다.</li></ul><p>만약 컴포넌트를 변경할 이유가 한 가지라면 우리가 “어떤 다른 이유로” 소프트웨어를 변경하더라도 이 컴포넌트에 대해선 전혀 신경 쓸 필요가 없다.</p><p>하지만 변경할 이유라는건 컴포넌트 간의 의존성을 통해 너무 쉽게 전파된다.<br>A 컴포넌트는 B,C,D,E에 의존하고 E는 다른 의존성이 없다면<br>A는 다른 B,C,D,E가 바뀔 때 함께 바뀌어야 하지만 E는 E에 기능이 추가,변경될 때만 바뀌게 될 것이다.</p><h3 id="의존성-역전-원칙-Dependency-Inversion-Principle-DIP"><a href="#의존성-역전-원칙-Dependency-Inversion-Principle-DIP" class="headerlink" title="의존성 역전 원칙(Dependency Inversion Principle, DIP)"></a>의존성 역전 원칙(Dependency Inversion Principle, DIP)</h3><p>계층형에서 계층 간 의존성은 항상 다음 계층인 아래 방향을 가리킨다. 단일 책임 원칙을 고수준에서 적용할 경우 상위 계층들이 하위 계층들에 비해 변경할 이유가 더 많다.</p><p>그러므로 영속성 계층에 대한 도메인 계층의 의존성 때문에 영속성 계층을 변경할 때마다 잠재적으로 도메인 계층도 변경해야 한다. 하지만 도메인 코드는 애플리케이션에서 가장 중요한 코드인데 영속성 코드가 바뀐다고 도메인 코드까지 바꾸는게 맞을까? 이 의존성은 어떻게 제거할 수 있을까? 의존성 역전 원칙은 말 그대로의 의미이다.</p><ul><li>코드 상의 어떤 의존성이든 그 방향을 바꿀 수(역전시킬 수) 있다.<ul><li>단, 서드파티 라이브러리처럼 제어할 수 없는 코드에 의존성을 가지고 있다면 역전이 불가능하다.</li></ul></li></ul><p>일반적으로 보기 쉬운 계층형 구조의 서비스가 있다. 도메인 계층의 서비스는 영속성 계층의 엔티티와 리포지토리와 상호작용한다.</p><p>엔티티는 도메인 객체를 표현하고 도메인 코드는 이러한 엔티티의 상태를 변경하는 일을 중심으로 하니까 일단 엔티티를 도메인 계층으로 올려보면 영속성의 리포지토리가 도메인의 엔티티를 의존하는 순환의존성이 생기게 된다.</p><p style="text-align:center">  <img src="/img/book/만들면서 배우는 클린 아키텍처/clean-2-1.jpg"></p><p>여기서 DIP를 적용하면 도메인 계층에 리포지토리에 대한 인터페이스를 만들고, 실제 리포지토리는 영속성 계층에서 구현하게 하는 것이다.</p><p style="text-align:center">  <img src="/img/book/만들면서 배우는 클린 아키텍처/clean-2-2.jpg" style="width:500px; height:auto"></p><p>이제 도메인 계층에 인터페이스를 도입함으로써 의존성을 역전시켜서 도메인 로직은 영속성 코드에 의존하지 않고 영속성 계층이 도메인 계층에 의존하게 된다.</p><h3 id="클린-아키텍처"><a href="#클린-아키텍처" class="headerlink" title="클린 아키텍처"></a>클린 아키텍처</h3><p>도메인 코드가 바깥으로 향하는 어떤 의존성도 없어야 함을 의미한다. 대신 의존성 역전 원칙의 도움으로 모든 의존성이 도메인 코드를 향하고 있다.</p><p>클린 아키텍처의 코어에는 주변 유스케이스에서 접근하는 도메인 엔티티들이 있다. 유스케이스는 서비스를 의미하는데 단일 책임을 갖기 위해 좀 더 세분화 시켜서 넓은 서비스 문제를 피한다.</p><p>도메인 코드에선 어떤 영속성 프레임워크나 UI 프레임워크가 사용되는지 알 수 없기 때문에 특정 프레임워크에 특화된 코드를 가질 수 없고 비즈니스 규칙에 집중할 수 있어서 자유롭게 모델링할 수 있다.</p><p>다만, 도메인 계층이 영속성이나 UI 같은 외부 계층과 철저하게 분리돼야 하므로 애플리케이션의 엔티티에 대한 모델을 각 계층에서 유지보수 해야 한다.</p><p>영속성에서 ORM을 사용하는 경우, 도메인 계층과 영속성 계층이 데이터를 주고받을 때, 두 계층에 각각 엔티티 클래스를 만들어서 서로 변환해야 하는데 이는 바람직한 방향이다.</p><p>특정 프레임워크에 특화된 문제로부터 해방시키고자 했던, 결합이 제거된 상태이다.</p><p>클린 아키텍처는 약간 추상적인 느낌이 강해서 이 원칙들을 좀 더 구체적으로 만들어주는 ‘육각형 아키텍처(헥사고날 아키텍처)’에 대해서 살펴보자.</p><h3 id="육각형-아키텍처-헥사고날-아키텍처"><a href="#육각형-아키텍처-헥사고날-아키텍처" class="headerlink" title="육각형 아키텍처(헥사고날 아키텍처)"></a>육각형 아키텍처(헥사고날 아키텍처)</h3><p>애플리케이션 코어가 각 어댑터와 상호작용하기 위해 특정 포트를 제공하기 때문에 ‘포트와 어댑터 아키텍처라고도 불린다. 꼭 육각형의 모양이 중요한건 아니고 팔각형이어도 상관없다.</p><p>육각형 안에는 도메인 엔티티와 이와 상호작용하는 유스케이스가 있다. 외부로 향하는 의존성이 없고 모든 의존성은 코어를 향한다.</p><p>육각형 바깥에는 웹 브라우저와 상호작용하는 웹 어댑터, 데이터베이스와 상호작용하는 영속성 어댑터, 외부 시스템와 상호작용하는 어댑터 등 애플리케이션과 상호작용하는 다양한 어댑터들이 있다.</p><p>코어와 어댑터들 간의 통신이 가능하려면 애플리케이션 코어가 각각의 포트를 제공해야 한다.</p><p>주도하는 어댑터에게는 포트가 코어에 있는 유스케이스 클래스들에  의해 구현되고 호출되는 인터페이스가 될 것이고, 주도되는 어댑터에는 어댑터에 의해 구현되고 코어에 의해 호출되는 인터페이스가 될 것이다.</p><p>이러한 아키텍처의 목적은 결국 도메인 코드가 바깥쪽 코드에 의존하지 않게 함으로써 영속성과 UI에 특화된 모든 문제로부터 도메인 로직의 결합을 제거하고 코드를 변경할 이유의 수를 줄이는 효과가 있다.</p>]]></content:encoded>
       
       
       <category domain="https://yoo0926.github.io/categories/book/">book</category>
@@ -206,9 +206,9 @@
       <category domain="https://yoo0926.github.io/categories/book/%EC%8B%A4%EC%A0%84-%EC%8A%A4%ED%94%84%EB%A7%815%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%EB%A6%AC%EC%95%A1%ED%8B%B0%EB%B8%8C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/">실전! 스프링5를 활용한 리액티브 프로그래밍</category>
       
       
-      <category domain="https://yoo0926.github.io/tags/spring/">spring</category>
-      
       <category domain="https://yoo0926.github.io/tags/book/">book</category>
+      
+      <category domain="https://yoo0926.github.io/tags/spring/">spring</category>
       
       
       <comments>https://yoo0926.github.io/2021/12/03/book/%EC%8B%A4%EC%A0%84-%EC%8A%A4%ED%94%84%EB%A7%815%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%EB%A6%AC%EC%95%A1%ED%8B%B0%EB%B8%8C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/4-2/#disqus_thread</comments>
@@ -240,9 +240,9 @@
       <category domain="https://yoo0926.github.io/categories/book/%EC%8B%A4%EC%A0%84-%EC%8A%A4%ED%94%84%EB%A7%815%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%EB%A6%AC%EC%95%A1%ED%8B%B0%EB%B8%8C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/">실전! 스프링5를 활용한 리액티브 프로그래밍</category>
       
       
-      <category domain="https://yoo0926.github.io/tags/spring/">spring</category>
-      
       <category domain="https://yoo0926.github.io/tags/book/">book</category>
+      
+      <category domain="https://yoo0926.github.io/tags/spring/">spring</category>
       
       
       <comments>https://yoo0926.github.io/2021/12/03/book/%EC%8B%A4%EC%A0%84-%EC%8A%A4%ED%94%84%EB%A7%815%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%EB%A6%AC%EC%95%A1%ED%8B%B0%EB%B8%8C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/4/#disqus_thread</comments>
@@ -274,9 +274,9 @@
       <category domain="https://yoo0926.github.io/categories/book/%EC%8B%A4%EC%A0%84-%EC%8A%A4%ED%94%84%EB%A7%815%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%EB%A6%AC%EC%95%A1%ED%8B%B0%EB%B8%8C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/">실전! 스프링5를 활용한 리액티브 프로그래밍</category>
       
       
-      <category domain="https://yoo0926.github.io/tags/spring/">spring</category>
-      
       <category domain="https://yoo0926.github.io/tags/book/">book</category>
+      
+      <category domain="https://yoo0926.github.io/tags/spring/">spring</category>
       
       
       <comments>https://yoo0926.github.io/2021/11/28/book/%EC%8B%A4%EC%A0%84-%EC%8A%A4%ED%94%84%EB%A7%815%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%EB%A6%AC%EC%95%A1%ED%8B%B0%EB%B8%8C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/3/#disqus_thread</comments>
@@ -308,9 +308,9 @@
       <category domain="https://yoo0926.github.io/categories/book/%EC%8B%A4%EC%A0%84-%EC%8A%A4%ED%94%84%EB%A7%815%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%EB%A6%AC%EC%95%A1%ED%8B%B0%EB%B8%8C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/">실전! 스프링5를 활용한 리액티브 프로그래밍</category>
       
       
-      <category domain="https://yoo0926.github.io/tags/spring/">spring</category>
-      
       <category domain="https://yoo0926.github.io/tags/book/">book</category>
+      
+      <category domain="https://yoo0926.github.io/tags/spring/">spring</category>
       
       
       <comments>https://yoo0926.github.io/2021/11/28/book/%EC%8B%A4%EC%A0%84-%EC%8A%A4%ED%94%84%EB%A7%815%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%EB%A6%AC%EC%95%A1%ED%8B%B0%EB%B8%8C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/2/#disqus_thread</comments>
@@ -342,9 +342,9 @@
       <category domain="https://yoo0926.github.io/categories/book/%EC%8B%A4%EC%A0%84-%EC%8A%A4%ED%94%84%EB%A7%815%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%EB%A6%AC%EC%95%A1%ED%8B%B0%EB%B8%8C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/">실전! 스프링5를 활용한 리액티브 프로그래밍</category>
       
       
-      <category domain="https://yoo0926.github.io/tags/spring/">spring</category>
-      
       <category domain="https://yoo0926.github.io/tags/book/">book</category>
+      
+      <category domain="https://yoo0926.github.io/tags/spring/">spring</category>
       
       
       <comments>https://yoo0926.github.io/2021/11/28/book/%EC%8B%A4%EC%A0%84-%EC%8A%A4%ED%94%84%EB%A7%815%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%EB%A6%AC%EC%95%A1%ED%8B%B0%EB%B8%8C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/1/#disqus_thread</comments>
@@ -521,9 +521,9 @@
       
       <category domain="https://yoo0926.github.io/tags/programmers/">programmers</category>
       
-      <category domain="https://yoo0926.github.io/tags/java/">java</category>
-      
       <category domain="https://yoo0926.github.io/tags/kakao/">kakao</category>
+      
+      <category domain="https://yoo0926.github.io/tags/java/">java</category>
       
       
       <comments>https://yoo0926.github.io/2021/05/09/algo/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EC%8B%A0%EA%B7%9C-%EC%95%84%EC%9D%B4%EB%94%94-%EC%B6%94%EC%B2%9C/#disqus_thread</comments>
@@ -552,9 +552,9 @@
       <category domain="https://yoo0926.github.io/categories/book/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/">스프링부트와 AWS로 혼자 구현하는 웹서비스</category>
       
       
-      <category domain="https://yoo0926.github.io/tags/spring/">spring</category>
-      
       <category domain="https://yoo0926.github.io/tags/book/">book</category>
+      
+      <category domain="https://yoo0926.github.io/tags/spring/">spring</category>
       
       
       <comments>https://yoo0926.github.io/2021/04/25/book/%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/5/#disqus_thread</comments>
@@ -610,9 +610,9 @@
       <category domain="https://yoo0926.github.io/categories/book/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/">스프링부트와 AWS로 혼자 구현하는 웹서비스</category>
       
       
-      <category domain="https://yoo0926.github.io/tags/spring/">spring</category>
-      
       <category domain="https://yoo0926.github.io/tags/book/">book</category>
+      
+      <category domain="https://yoo0926.github.io/tags/spring/">spring</category>
       
       
       <comments>https://yoo0926.github.io/2021/04/22/book/%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/4/#disqus_thread</comments>
