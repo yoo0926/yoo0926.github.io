@@ -9,6 +9,14 @@
 
 
     <url>
+        <loc>https://yoo0926.github.io/2023/06/14/java/java-01/</loc>
+        <lastmod>2023-06-14T10:39:30.083Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://yoo0926.github.io/2023/06/13/spring/WebFlux/spring-webflux-4/</loc>
         <lastmod>2023-06-13T12:38:54.099Z</lastmod>
         <changefreq>weekly</changefreq>
