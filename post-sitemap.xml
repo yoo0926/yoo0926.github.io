@@ -73,7 +73,7 @@
     </url>
 
     <url>
-        <loc>https://yoo0926.github.io/2021/12/03/book/spring5-reactive/4-2/</loc>
+        <loc>https://yoo0926.github.io/2021/12/03/book/spring5-reactive/4/</loc>
         <lastmod>2023-06-10T11:50:46.425Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -81,7 +81,7 @@
     </url>
 
     <url>
-        <loc>https://yoo0926.github.io/2021/12/03/book/spring5-reactive/4/</loc>
+        <loc>https://yoo0926.github.io/2021/12/03/book/spring5-reactive/4-2/</loc>
         <lastmod>2023-06-10T11:50:46.425Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -273,7 +273,7 @@
     </url>
 
     <url>
-        <loc>https://yoo0926.github.io/2020/11/02/git/git-flow/</loc>
+        <loc>https://yoo0926.github.io/2021/08/21/interview/technical-1/</loc>
         <lastmod>2023-05-14T14:50:58.312Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -281,7 +281,7 @@
     </url>
 
     <url>
-        <loc>https://yoo0926.github.io/2021/08/21/interview/technical-1/</loc>
+        <loc>https://yoo0926.github.io/2020/11/02/git/git-flow/</loc>
         <lastmod>2023-05-14T14:50:58.312Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -321,14 +321,6 @@
     </url>
 
     <url>
-        <loc>https://yoo0926.github.io/2021/11/13/angular/angular-1/</loc>
-        <lastmod>2023-05-14T14:50:58.306Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://yoo0926.github.io/2021/11/21/blog/ogimage-reset/</loc>
         <lastmod>2023-05-14T14:50:58.306Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -338,6 +330,14 @@
 
     <url>
         <loc>https://yoo0926.github.io/2020/11/01/blog/start-blog/</loc>
+        <lastmod>2023-05-14T14:50:58.306Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://yoo0926.github.io/2021/11/13/angular/angular-1/</loc>
         <lastmod>2023-05-14T14:50:58.306Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
