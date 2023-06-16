@@ -9,8 +9,34 @@
     <atom:link href="https://yoo0926.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>티끌모아 태산이라 티끌부터 모아본다.</description>
-    <pubDate>Thu, 15 Jun 2023 11:25:32 GMT</pubDate>
+    <pubDate>Fri, 16 Jun 2023 12:02:42 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Spring Event와 ApplicationEventPublisher</title>
+      <link>https://yoo0926.github.io/2023/06/16/spring/spring-3/</link>
+      <guid>https://yoo0926.github.io/2023/06/16/spring/spring-3/</guid>
+      <pubDate>Fri, 16 Jun 2023 11:55:27 GMT</pubDate>
+      
+        
+        
+      <description>&lt;p style=&quot;text-align:center&quot;&gt;
+  &lt;img src=&quot;/img/spring/spring-3-1.png&quot; alt=&quot;spring event&quot;&gt;
+&lt;/p&gt;
+&lt;h2 id=&quot;Spring에서-Event&quot;&gt;Spring에서 Event&lt;/h2&gt;
+&lt;</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<p style="text-align:center">  <img src="/img/spring/spring-3-1.png" alt="spring event"></p><h2 id="Spring에서-Event">Spring에서 Event</h2><p>Spring은 일반적으로 DI를 통해 메서드를 호출하여 데이터를 전달한다.</p><p>규모가 작을 때는 큰 문제가 없지만 도메인이 점점 복잡히질 경우 여러 도메인 사이에 강한 의존성 결합으로 시스템이 복잡해지는 문제가 발생할 수 있다.</p><p>Spring은 Event를 통해 Bean과 Bean 사이의 데이터를 전달할 수 있는데 ApplicationContext에 이벤트를 넘겨주면 Listener에서 받아서 처리한다.</p><p>이벤트를 발생시키는 publisher와 받아서 처리하는 Listener, 전달할 데이터를 가지고 있는 event클래스로 구성된다.</p><h2 id="ApplicationEventPublisher">ApplicationEventPublisher</h2><p>Spring의 ApplicationContext가 상속하는 인터페이스 중 하나로 옵저버 패턴의 구현체이다.</p><p>Publisher와 Listener를 Spring의 Bean으로 등록하고 publishEvent()가 실행되면 등록된 listener에 Event를 던진다.</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Getter</span></span><br><span class="line"><span class="meta">@Builder</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestEvent</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String eventId;</span><br><span class="line">    <span class="keyword">private</span> String type;</span><br><span class="line">    <span class="keyword">private</span> String data;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> TestEvent <span class="title function_">toCompleteEvent</span><span class="params">(String data)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> TestEvent.builder()</span><br><span class="line">                .eventId(UUID.randomUUID().toString())</span><br><span class="line">                .type(<span class="string">&quot;completed&quot;</span>)</span><br><span class="line">                .data(data)</span><br><span class="line">                .build();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> TestEvent <span class="title function_">toErrorEvent</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> TestEvent.builder()</span><br><span class="line">                .eventId(UUID.randomUUID().toString())</span><br><span class="line">                .type(<span class="string">&quot;error&quot;</span>)</span><br><span class="line">                .data(<span class="string">&quot;data is Null&quot;</span>)</span><br><span class="line">                .build();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>Spring 4.2 부터는 ApplicationEvent를 상속받지 않아도 된다.</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="meta">@RequiredArgsConstructor</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">EventTestService</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> ApplicationEventPublisher applicationEventPublisher;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> Mono&lt;String&gt; <span class="title function_">publishTest</span><span class="params">(String message)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> Mono.fromCallable(() -&gt; &#123;</span><br><span class="line">            <span class="keyword">if</span>(message != <span class="literal">null</span>)&#123;</span><br><span class="line">                applicationEventPublisher.publishEvent(TestEvent.toCompleteEvent(message));</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                applicationEventPublisher.publishEvent(TestEvent.toErrorEvent());</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;result: &quot;</span> + message;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>ApplicationContext를 주입받아도 되지만 명시적으로 ApplicationEventPublisher를 주입받아서 사용한다.</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestEventListener</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@EventListener</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onTestEventHandle</span><span class="params">(TestEvent event)</span> &#123;</span><br><span class="line">        log.info(<span class="string">&quot;event Id: &quot;</span> + event.getEventId() + <span class="string">&quot;, type: &quot;</span> + event.getType() + <span class="string">&quot;, Message: &quot;</span> + event.getData());</span><br><span class="line">        log.info(<span class="string">&quot;Handling context started event.&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>Spring Bean에 등록된 EventListener에서 이벤트를 받아서 처리한다.</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2023</span>-<span class="number">01</span>-<span class="number">19</span> <span class="number">15</span>:<span class="number">26</span>:<span class="number">28.072</span>  INFO <span class="number">20172</span> --- [ctor-http-nio-<span class="number">3</span>] c.e.s.listener.TestEventListener         : event Id: 8f9d4534-7ada-404a-9b1b-71f2958a749b, type: completed, Message: testSample!</span><br><span class="line"><span class="number">2023</span>-<span class="number">01</span>-<span class="number">19</span> <span class="number">15</span>:<span class="number">26</span>:<span class="number">28.072</span>  INFO <span class="number">20172</span> --- [ctor-http-nio-<span class="number">3</span>] c.e.s.listener.TestEventListener         : Handling context started event.</span><br></pre></td></tr></table></figure><p>잘 돌아간다.</p>]]></content:encoded>
+      
+      
+      
+      
+      <comments>https://yoo0926.github.io/2023/06/16/spring/spring-3/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>ThreadLocal과 Netty</title>
@@ -566,33 +592,6 @@ node가 그렇게 익숙하진 않아서 구글링으로 찾아보니 그냥 원
       
       
       <comments>https://yoo0926.github.io/2023/01/19/spring/WebFlux/spring-webflux-1/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Docker Desktop for window 경로 변경</title>
-      <link>https://yoo0926.github.io/2022/01/08/docker/installation-directory/</link>
-      <guid>https://yoo0926.github.io/2022/01/08/docker/installation-directory/</guid>
-      <pubDate>Sat, 08 Jan 2022 07:19:32 GMT</pubDate>
-      
-        
-        
-      <description>&lt;p&gt;회사pc에서 docker를 로컬에 설치해서 사용해볼 일이 있어서 설치를 하려는데 보안 프로그램 때문에 C드라이브에 제대로 설치가 안됐다.&lt;/p&gt;
-&lt;p&gt;D드라이브에 설치를 하고 싶었는데 &lt;code&gt;Docker Desktop for window&lt;/c</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<p>회사pc에서 docker를 로컬에 설치해서 사용해볼 일이 있어서 설치를 하려는데 보안 프로그램 때문에 C드라이브에 제대로 설치가 안됐다.</p><p>D드라이브에 설치를 하고 싶었는데 <code>Docker Desktop for window</code> 설치파일에서 설치경로를 바꾸는 옵션을 제공하지 않고 있는데</p><p>🔗 <a href="https://github.com/docker/roadmap/issues/94">https://github.com/docker/roadmap/issues/94</a><br>(최근까지도 기다리는 사람이 많은듯?)</p><p>도커포럼에서 해당 이슈에 대한 임시 해결책으로 링크를 생성해서 설치경로를 바꾸는 방법이 있었다.</p><p>🔗 <a href="https://forums.docker.com/t/docker-installation-directory/32773/11">https://forums.docker.com/t/docker-installation-directory/32773/11</a></p><p>docker 설치 전 cmd를 관리자모드로 실행하고 아래 명령어를 실행한다.(xxx = 본인 계정)</p><p>만약 이미 한번 설치를 해서 각 위치에 폴더가 이미 생성된 상태라 C드라이브 경로에 생성된 폴더들 다 지우고 명령어 실행하면 된다. (타겟 경로의 폴더들은 나중에 만들어줘도 됨)</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mklink /j <span class="string">&quot;C:\ProgramData\Docker&quot;</span> <span class="string">&quot;D:\ProgramData\Docker&quot;</span></span><br><span class="line">mklink /j <span class="string">&quot;C:\ProgramData\DockerDesktop&quot;</span> <span class="string">&quot;D:\ProgramData\DockerDesktop&quot;</span></span><br><span class="line">mklink /j <span class="string">&quot;C:\Program Files\Docker&quot;</span> <span class="string">&quot;D:\Program Files\Docker&quot;</span></span><br><span class="line">mklink /j <span class="string">&quot;C:\Users\xxx\AppData\Local\Docker&quot;</span> <span class="string">&quot;D:\Users\xxx\AppData\Local\Docker&quot;</span></span><br></pre></td></tr></table></figure><p>이후 installer를 실행해보면 로그에는 C드라이브에 설치하는거로 나오지만 실제 파일은 링크를 걸어놓은 D드라이브에 생성되는 모습을 볼 수 있다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://yoo0926.github.io/categories/docker/">docker</category>
-      
-      
-      <category domain="https://yoo0926.github.io/tags/docker/">docker</category>
-      
-      
-      <comments>https://yoo0926.github.io/2022/01/08/docker/installation-directory/#disqus_thread</comments>
       
     </item>
     
