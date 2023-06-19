@@ -4,7 +4,364 @@
         gtag('js', new Date());
     
         gtag('config', 'G-EKSGRQ3VMZ');</script><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><script data-ad-client="ca-pub-4055492668550708" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" async></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/rss2.xml" title="하루하루 끄적끄적" type="application/rss+xml">
-</head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo-header.png" alt="하루하루 끄적끄적" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="external nofollow noopener noreferrer" title="Download on GitHub" href="https://github.com/yoo0926/yoo0926.github.io"><i class="fab fa-github"></i></a><a class="navbar-item search" title="검색" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-9-tablet is-9-desktop is-9-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/categories">카테고리</a></li><li class="is-active"><a href="#" aria-current="page">etc</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time datetime="2021-12-13T14:07:12.000Z" title="2021. 12. 13. 오후 11:07:12">2021-12-13</time>&nbsp;게시 됨</span><span class="level-item"><time datetime="2023-05-14T14:50:58.311Z" title="2023. 5. 14. 오후 11:50:58">2023-05-14</time>&nbsp;업데이트 됨</span><span class="level-item"><a class="link-muted" href="/categories/etc/">etc</a></span><span class="level-item">8분안에 읽기 (약 1232 단어)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/12/13/etc/gtm-1/">Google Tag Manager 간단 정리</a></h1><div class="content"><p>웹사이트 또는 모바일 앱에서 <code>태그</code>라고 통칭되는 <strong>추적 코드 및 관련 코드 조각</strong>을 쉽고 빠르게 업데이트할 수 있는 태그 관리 시스템</p>
+</head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo-header.png" alt="하루하루 끄적끄적" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="external nofollow noopener noreferrer" title="Download on GitHub" href="https://github.com/yoo0926/yoo0926.github.io"><i class="fab fa-github"></i></a><a class="navbar-item search" title="검색" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-9-tablet is-9-desktop is-9-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/categories">카테고리</a></li><li class="is-active"><a href="#" aria-current="page">etc</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time datetime="2023-03-02T15:24:17.000Z" title="2023. 3. 3. 오전 12:24:17">2023-03-03</time>&nbsp;게시 됨</span><span class="level-item"><time datetime="2023-06-19T15:33:29.705Z" title="2023. 6. 20. 오전 12:33:29">2023-06-20</time>&nbsp;업데이트 됨</span><span class="level-item"><a class="link-muted" href="/categories/etc/">etc</a></span><span class="level-item">23분안에 읽기 (약 3504 단어)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/03/03/etc/naver-deview-2023/">DEVIEW 2023 - Day1</a></h1><div class="content"><p>2023-02-27 ~ 28 에 진행했던 deview day01 컨퍼런스 내용을 간단히 정리했다.<br>
+내용은 좋았다고 느꼈지만 당장 내 실무에 도움된다기 보단 그냥 시야를 넓히고 이런게 트랜드구나 하는 걸 들었다는거에 의의를 두기로 했다.</p>
+<h2 id="네이버-검색은-어떻게-나보다-더-내-의도를-잘-아는가-AiRSearch-반응형-추천">네이버 검색은 어떻게 나보다 더 내 의도를 잘 아는가? - AiRSearch 반응형 추천</h2>
+<p>네이버는 현재 사용자 의도에 적합한 검색 결과를 제공하도록 여러가지 추천 알고리즘이 적용되어있다.</p>
+<p>사용자 의도를 이해하는 방법은 크게 두가지가 있는데</p>
+<ol>
+<li>검색어
+<ul>
+<li>
+<p>사용자가 질의하는 검색어(쿼리)를 통해 의도를 예측한다.</p>
+</li>
+<li>
+<p>검색어 입력 후 탐색과정에서 관심사와 검색의도를 더 구체화할 수 있다.</p>
+<blockquote>
+<p>ex) 제주도여행 검색 후 결과목록<br>
+Doc1 : 제주도에서 <code>고등어</code>가 맛있는 식당 추천<br>
+Doc2 : 12월 제주도 겨울 여행<br>
+Doc3 : 제주도 <code>가파도</code> 배시간 &amp; 올레길 추천</p>
+</blockquote>
+<p>여기서 3번째 문서를 클릭했다면 사용자의 관심사는 고등어 보단 가파도에 있다는걸 파악할 수 있다.</p>
+</li>
+<li>
+<p>사용자의 행동을 바탕으로 의도를 이해하고 반응형으로 컨텐츠를 빠르게 제공하는데 여기서 반응형 추천결과란 선택한 문서를 읽고 다시 뒤로가기로 나오게 되면 관심사와 유사한 다른 문서를 추천하는 방식이다.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="반응형-문제를-해결하기">반응형 문제를 해결하기</h3>
+<ol>
+<li>반응형 문제 정의
+<ul>
+<li>언제 / 어디서 / 누구에게? : 네이버 통합검색에서 문서를 소비하고 돌아온 사용자들에게</li>
+<li>Input : 사용자의 행동 기반 정보들 (검색어, 클릭한 문서, 사용자의 취향 정보 등)</li>
+<li>Output : 추천 문서</li>
+</ul>
+<ol>
+<li>반응형 문제의 특징으로 검색 사용자의 2가지 탐색 패턴이 있다.
+<ol>
+<li>국내여행 → 제주도 여행 검색 후
+<ol>
+<li><code>Narrow-Down</code> → 가파도</li>
+<li><code>Side-By-Side</code> → 일본여행</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>두번째는 검색과 추천의 융합이 필요하다.
+<ol>
+<li>검색어를 통해 단순히 결과를 보여주거나 클릭한 문서 기반의 추천문서만 보여주는게 아니라 검색어와 클릭한 문서를 종합하여 추천문서를 보여주려고 한다.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>반응형 문제를 정의하였다면 이제 이러한 문제를 해결하기 위한 모델을 만들었다.
+<ul>
+<li>Input : Query, Clicked Document, User</li>
+<li>Retriever : 각 요소를 기반 검색</li>
+<li>Ranker : 결과 정렬</li>
+<li>Output : 추천문서 제공</li>
+</ul>
+</li>
+</ol>
+<h3 id="반응형-문제를-풀기-위한-3가지-방법">반응형 문제를 풀기 위한 3가지 방법</h3>
+<ol>
+<li>Intent Query
+<ul>
+<li>클릭한 문서의 제목에서 핵심 의도를 표한하는 키워드 찾기</li>
+<li>네이버 언어모델을 기반으로 (Q1,D1)와 적합한 Intent Query의 유사도가 높도록 학습</li>
+<li>검색 세션 로그 (Q1,D1) → Q2를 이용해서 학습 데이터를 구축하고 의도를 벗어나는 Q2는 예외처리</li>
+</ul>
+</li>
+<li>Intent Walker
+<ul>
+<li>그래프 기반으로 사용자 의도에 맞는 문서 추천하기
+<ul>
+<li>클릭로그 활용 탐색과정 그래프 생성</li>
+</ul>
+</li>
+<li>유저가 클릭한 문서를 시작점으로 아래의 방법들을 실행
+<ul>
+<li>랜덤 워크 수행</li>
+<li>Label Propagation 수행</li>
+<li>(검색어-클릭문서), (세션ID - 클릭문서) 페어 등을 기반으로 GCN 임베딩 학습</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>User Preference
+<ul>
+<li>유저의 취향에 적합한 문서를 추천
+<ul>
+<li>Q1) <code>후드</code>집업 + D1) 오버핏 후드집업 <code>양털후리스</code> + U1) <code>30대 남성</code>
+<ul>
+<li>D2) 너무 편한 <code>남자</code> <code>후리스</code> 추천 모음</li>
+</ul>
+</li>
+<li>추천 문서에 대한 long-term의 세대성별 선호도를 ranker의 feature로 추가</li>
+<li>개인의 short-term 관심사 기반한 개인화 랭킹 연구 중</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="반응형-서비스-개발을-위한-꿀팁">반응형 서비스 개발을 위한 꿀팁</h3>
+<ol>
+<li>문제를 작게 정의하기
+<ul>
+<li>이런경우 막연하게 풀고 싶은 큰 문제를 구체적이고 해결 가능성이 있는 작은 문제부터 시작한다.</li>
+<li>ex) 사용자의도가 Narrow-Down vs Side-By-Side ? → Narrow-Down만 있다고 가정<br>
+대상 문서 : 여행 등 일부 카테고리 한정</li>
+<li>작은 문제의 장점은 아래와 같은데 애자일 방법론과 유사한거 같다.
+<ul>
+<li>빠른 개발</li>
+<li>문제 해결 가능성과 효과 검증</li>
+<li>사용자의 피드백으로 문제 확장</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>학습데이터 잘 구축하기
+<ul>
+<li>(Q1, D1) → 후보 D2의 적합도 [0,1] or [1,2,3,4]
+<ul>
+<li>서비스 출시 전 소량의 Manual 평가를 거친 후</li>
+<li>서비스 출시 후 사용자 피드백을 기반으로 생성한다.<br>
+(ex) 클릭 받으면 1, 아니면 0)
+<ul>
+<li>단점?어려운점? : 모델 bias(편향), 클릭은 없지만 적합 문서</li>
+<li>개선 아이디어로 CTR 역전되면 Negative
+<ul>
+<li>검색에는 Rank Bias 존재</li>
+<li>하위 노출 문서보다 CTR이 낮은 상위 문서는 매력이 낮을 가능성 있음</li>
+<li>D1,D2 보다 D3의 CTR이 높은 경우 D1,D2 는 Negative 후보</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>positive set과 negative set을 후보로 모아서 Manual그룹평가와 비교하여 신뢰도를 측정하고 최종 선정된 Top3 학습데이터 weekly 생성한다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>ABTest 활용하기 : ABTest 결과를 바탕으로 최종 검증 모델로 서비스 적용</li>
+<li>지표 모니터링하기 : CTR, 체류시간, LCR(마지막 클릭 비율) 등을 모니터링하여 사용자 만족도 측정 및 모델 개선 참고</li>
+</ol>
+<hr>
+<h2 id="눈으로-보며-듣는-음성-기록-클로바노트-서비스의-웹-기술-톺아보기">눈으로 보며 듣는 음성 기록, 클로바노트 서비스의 웹 기술 톺아보기</h2>
+<p>클로바노트 2.x 버전에서 지원할 웹기술을 살펴보자</p>
+<ol>
+<li>오프라인 지원
+<ul>
+<li>Progressive Web Application(PWA) : Next.js +next-pwa + workbox로 구현</li>
+<li>오프라인 API 중 R-Get을 제외한 나머지 C-Post U-Put,Patch D-Delete 는 불필요하여 막았고 LocalStorage와 IndexedDb를 활용하였음</li>
+<li>가장 큰 골칫거리는 Update 후 Deploy 방식이었는데
+<ul>
+<li>주기적인 최신버전 체크, 수동 업데이트 진행, 강제 업데이트 로직 추가, 에러 시 SW 제거 및 해당버전 재설치 방지 등을 통해 처리하였음?</li>
+</ul>
+</li>
+<li>PWA의 Service Worker의 XHR cache에 XHR 분기를 추가
+<ul>
+<li>[API Wrapper - [Fetch, Axios, <em>Socket</em>.io]] → Service Worker</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>반응형 지원</li>
+<li>ZOOM 서비스 연결
+<ol>
+<li>줌에서 제공하는 API 중 REST API와 WebHook을 이용하였음</li>
+<li>회의 시작, 종료에 맞춰서 훅을 받아서 녹음파일을 업로드하여 노트를 생성하도록 자동화 하였으나 좀 더 직접적인 도움을 주고 싶었음
+<ol>
+<li>실시간으로 가져오도록 구현해보자</li>
+<li>ZOOM의 라이브스트림을 통해 다른 플랫폼으로 스트리밍을 제공하는데 이것을 활용 - RTMP(Real Time Message Protocol)</li>
+<li>이를 위해 백엔드 서버가 필요했는데 Node-Media-Server 가 원하는 스펙이 모두 있었고 BFF(Backend for Frontend) 서버를 개발하였음</li>
+<li>이제 회의시작 후 실시간으로 노트생성이 가능해졌다.</li>
+</ol>
+</li>
+<li>예외처리
+<ol>
+<li>웹훅 API, RTMP 타이밍 문제</li>
+<li>네트워크 등의 오류로 웹훅을 받을 수 없을때
+<ul>
+<li>프로세스가 진행되는 동안 주기적으로 REST API 더블체크하도록 처리하였음</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>모노레포
+<ul>
+<li>Multi Repo에서 Mono Repo로 합치게 되면서 팀으로서의 장점이 뚜렷해졌음</li>
+<li>기술적 장점
+<ul>
+<li>반복적인 환경 셋팅, 코드 중복 최소화</li>
+<li>효율적인 의존성 관리</li>
+<li>단일 이슈 트래킹</li>
+<li>각자의 역할에 집중된 작은 패키지들</li>
+<li>린트외의 팀 규칙을 적용하여 신규입사자의 컨텍스트 파악이 용이해지고 적극적인 리뷰문화를 도입할 수 있었다.</li>
+</ul>
+</li>
+<li>모노레포는 최대한 간단하게하고 빌드 캐싱은 Docker 활용</li>
+</ul>
+</li>
+<li>아토믹 디자인 패턴
+<ul>
+<li>컴포넌트를 가장 작은 단위로 설정하여 상위 컴포넌트를 만들어 코드 재사용을 최대화하는 방식
+<ul>
+<li>원자(아톰) → 분자 → 유기체 → 템플릿 → 페이지 구조</li>
+</ul>
+</li>
+<li>그대로 사용하기엔 재사용하지 않아도 되는 부분까지 나눠야하는 불편함이 있어서 일반적인 UI 라이브러리에서 제공하는 수준을 아톰으로 정의하여 구조를 잡았음</li>
+</ul>
+</li>
+<li>리코일
+<ul>
+<li>Flux / Redux 의 모든 기능이 가능하고 상대적으로 낮은 러닝커브를 가졌음</li>
+<li>자체적인 <code>비동기</code> 지원</li>
+<li>React18 <code>동시성</code>의 장점을 그대로 사용할 수 있는 라이브러리</li>
+<li>일반적인 리코일 폴더구조는 리코일에 직접접근이 가능하여 프로젝트가 커질수록 종속성이 복잡해지고 디버깅이 어렵다.
+<ul>
+<li>결과적으로 컴포넌트의 복잡함이 리코일로 이동한것에 불과하다.</li>
+</ul>
+</li>
+<li>격리된 도메인별 리코일
+<ul>
+<li>아톰, 셀렉터에 직접 접근 없이 훅으로만 연결</li>
+<li>리코일 훅은 서로 참조하지 않는다.(인증 제외)</li>
+<li>순서가 필요하다면 비지니스 컴포넌트 사용</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="네이버-스마트블록-개인화-검색">네이버 스마트블록 개인화 검색</h2>
+<p>와… 이건 듣는거만으론 이해불가라 포기</p>
+<hr>
+<h2 id="네이버-스케일로-카프카-컨슈머-사용하기">네이버 스케일로 카프카 컨슈머 사용하기</h2>
+<ol>
+<li>Kafka Consumer 동작 원리
+<ol>
+<li>Topic : 1개 이사의 Partition으로 분할, 1개 이상의 Replica로 복제된 log 자료 구조</li>
+<li>Client
+<ol>
+<li>Producer : 쓰고자 하는 Topic Partition의 맨 끝에 record를 추가</li>
+<li>Consumer : 읽어오고자 하는 Topic의 Partition에 저장된 record를 순차적으로 읽어 옴</li>
+</ol>
+</li>
+<li>Consumer Group
+<ul>
+<li>같은 ‘ <a target="_blank" rel="external nofollow noopener noreferrer" href="http://group.id">group.id</a>’ 설정값을 가진 Consumer들은 하나의 Consumer Group 을 이룬다.</li>
+<li>같은 Consumer Group에 속한 Consumer들이 Topic에 속한 Parition들을 나눠서 읽는다.</li>
+<li>Consumer Group == “논리적인 Consumer”</li>
+<li>Consumer Group이 제대로 동작하기 위해선 아래 기능이 필요하다.
+<ol>
+<li>Parition Assignment 기능</li>
+<li>Offset Commit 기능</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>Consumer Coordination 동작원리</li>
+</ol>
+<ul>
+<li>Consumer Group Coordinator
+<ol>
+<li>Consumer Group에 변경이 생겼는지 탐지</li>
+<li>TopicParition에 변경이 생겼는지 탐지</li>
+<li>Consumer Group Leader와 나머지 Consumer들간의 communication 중개</li>
+</ol>
+</li>
+<li>Consumer Group Leader
+<ul>
+<li>현재 구독중인 topic의 파티션들을 consumer들에 할당</li>
+</ul>
+</li>
+<li>Broker를 재시작할 필요 없이 더 유연하고 확장 가능한 파티션 할당을 지원하기 위해 좀 복잡한 구조로 만들어짐</li>
+<li>관련 설정
+<ul>
+<li>partition.assignment.strategy
+<ul>
+<li>List of org.apache.kafka.clients.consumer.ConsumerPartitionAssignor class</li>
+</ul>
+<ol>
+<li>Consumer Group에 참여한 모든 Consumer에 공통으로 설정된 Assignor중에서</li>
+<li>우선순위가 가장 높은 것이 파티션 할당 전략으로 선택</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Cloud 환경에서 Kafka Consumer 사용하기<br>
+1.</li>
+<li>네이버 스케일로 Kafka Consumer 사용하기</li>
+</ol>
+<p>카프카에 대해서 제대로 공부하지 않고 이 내용을 정리하는건 의미가 없다고 판단되서 나중에 다시 정리해보자…</p>
+<hr>
+<h2 id="GraphQL-잘-쓰고-계신가요">GraphQL 잘 쓰고 계신가요?</h2>
+<ol>
+<li>GraphQL이란
+<ul>
+<li><code>필요한 것만</code> 요청하고 받아오기</li>
+<li><code>단일 요청</code>으로 많은 데이터 가져오기</li>
+<li>가능한 케이스를 <code>타입 시스템</code>으로 표현하기</li>
+</ul>
+</li>
+</ol>
+<p>단순히 Payload를 줄이기 위해서만 사용하는건 아니다. 제대로 사용하지 않는다면 REST API와 크게 다를게 없는 경우도 발생한다.</p>
+<p>도입배경</p>
+<p>화면 컴포넌트를 구성하는 다양한 데이터를 여러 API를 호출하여 조회하는데 GraphQL BFF 를 통하면 개별 API 스펙을 크게 신경쓰지 않아도 된다.</p>
+<ol>
+<li>
+<p>Schema</p>
+<ol>
+<li>
+<p>데이터의 모양으로 DB의 스키마는 데이터를 R/W 하는데 최적화를 목적으로 관계와 참조로 중복을 해소한다(정규화)</p>
+</li>
+<li>
+<p>GraphQL 스키마는 클라이언트를 중심으로 생각하는 출처가 다른 데이터들의 통합 타입 시스템을 의미한다.</p>
+</li>
+<li>
+<p>Enum을 적극적으로 활용한다</p>
+ <figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> <span class="title class_">Profile</span> &#123;</span><br><span class="line">	name : <span class="title class_">String</span></span><br><span class="line">	thumbnail42 : <span class="title class_">String</span></span><br><span class="line">	thumbnail60 : <span class="title class_">String</span></span><br><span class="line">	...</span><br><span class="line">	<span class="attr">backgroundImage42</span>: <span class="title class_">String</span></span><br><span class="line">	...</span><br><span class="line">	<span class="attr">backgroundImage200</span>: <span class="title class_">String</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Enum 사용</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">Profile</span> &#123;</span><br><span class="line">	name : <span class="title class_">String</span></span><br><span class="line">	<span class="title function_">thumbnailImage</span>(<span class="attr">width</span>: <span class="title class_">ImageWidth</span> = <span class="variable constant_">W_42</span>): <span class="title class_">String</span>!</span><br><span class="line">	<span class="title function_">backgroundImage</span>(<span class="attr">width</span>: <span class="title class_">ImageWidth</span> = <span class="variable constant_">W_100</span>): <span class="title class_">String</span>!</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Enum을 사용함으로 좀 더 명확하게 표현하여 실수를 줄일 수 있다.</p>
+</li>
+<li>
+<p>암시적인 의미의 API를 좀 더 명시적으로 한다.</p>
+<ol>
+<li>여기서도 Enum을 사용하는데 empty가 의미를 가질 때 Enum을 사용할 수 있다.</li>
+</ol>
+ <figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> <span class="title class_">MediaFilter</span> &#123;</span><br><span class="line">	<span class="variable constant_">WITH_MEDIA</span></span><br><span class="line">	<span class="variable constant_">WITHOUT_MEIDA</span></span><br><span class="line">	<span class="variable constant_">ALL</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">Query</span> &#123;</span><br><span class="line">	<span class="title function_">placeReviews</span>(<span class="attr">placeId</span>: <span class="variable constant_">ID</span>!, <span class="attr">mediaFilter</span>: <span class="title class_">MediaFilter</span> = <span class="variable constant_">ALL</span>): [<span class="title class_">Review</span>!]!</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>API 사용자관점으로 명확하게 스키마를 표현한다.</p>
+</li>
+<li>
+<p>Error Handling</p>
+<ol>
+<li>
+<p>다양한 에러를 대응하고 메타데이터가 필요한 경우 이러한 상태값을 단순히 타입으로 추가한다면 여러 데이터가 복잡하게 얽히게 된다.</p>
+</li>
+<li>
+<p>Union 타입을 사용한다.</p>
+ <figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//union Result = Succeed | Error</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">DuplicationError</span> &#123;</span><br><span class="line">	<span class="attr">message</span>: <span class="title class_">String</span>!</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">type</span> <span class="title class_">PwordError</span> &#123;</span><br><span class="line">	<span class="attr">workds</span>: [<span class="title class_">String</span>!]!</span><br><span class="line">	<span class="attr">message</span>: <span class="title class_">String</span>!</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">union <span class="title class_">CheckNickNameOutput</span> = <span class="title class_">NickNameSucceed</span> | <span class="title class_">DuplicationError</span> | <span class="title class_">PwordError</span></span><br></pre></td></tr></table></figure>
+<p>다만, 유니온 타입만으론 새로운 스펙과 에러가 추가된다면 데이터를 받을 수 없다. 즉, 확장에 닫혀있는 상태이다.</p>
+</li>
+<li>
+<p>Interface를 적용하여 명시적이고 유연하게 에러 핸들링이 가능하다.</p>
+ <figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">BaseError</span> &#123;</span><br><span class="line">	<span class="attr">message</span>: <span class="title class_">String</span>!</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">Duplication</span> <span class="keyword">implements</span> <span class="title class_">BaseError</span> &#123;</span><br><span class="line">	<span class="attr">message</span>: <span class="title class_">String</span>!</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">type</span> <span class="title class_">PwordError</span> <span class="keyword">implements</span> <span class="title class_">BaseError</span> &#123;</span><br><span class="line">	<span class="attr">words</span>: [<span class="title class_">String</span>!]!</span><br><span class="line">	<span class="attr">message</span>: <span class="title class_">String</span>!</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">type</span> <span class="title class_">CountOverError</span> <span class="keyword">implements</span> <span class="title class_">BaseError</span> &#123;</span><br><span class="line">	<span class="attr">count</span>: <span class="title class_">Int</span>!</span><br><span class="line">	<span class="attr">message</span>: <span class="title class_">String</span>!</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ol>
+<p>아래 내용이 더 있으나 GraphQL이 어떻게 사용되는지 대략적인 개요를 한번 들어보고 싶었던거고 뒷부분은 리액트 관련 기술들이랑 좀 더 심화된 내용들이라 굳이 정리하지 않음</p>
+<p>결국 해당 팀에서도 별도의 GraphQL용 BFF 서버를 만들어서 운영중이라고 하니 REST API 처럼 별도의 GraphQL 스펙의 API 서버 쪽 공부를 더 해보도록 하자</p>
+</li>
+</ol>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time datetime="2021-12-13T14:07:12.000Z" title="2021. 12. 13. 오후 11:07:12">2021-12-13</time>&nbsp;게시 됨</span><span class="level-item"><time datetime="2023-05-14T14:50:58.311Z" title="2023. 5. 14. 오후 11:50:58">2023-05-14</time>&nbsp;업데이트 됨</span><span class="level-item"><a class="link-muted" href="/categories/etc/">etc</a></span><span class="level-item">8분안에 읽기 (약 1232 단어)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/12/13/etc/gtm-1/">Google Tag Manager 간단 정리</a></h1><div class="content"><p>웹사이트 또는 모바일 앱에서 <code>태그</code>라고 통칭되는 <strong>추적 코드 및 관련 코드 조각</strong>을 쉽고 빠르게 업데이트할 수 있는 태그 관리 시스템</p>
 <p>여기서 태그는 웹페이지의 HTML 태그를 말하는게 아니고 마케팅 업계에서 <strong>자바스크립트로 데이터를 수집해서 웹 분석 및 광고 성과 추적용도로 사용하기 위해 서비스 제공업체(구글,네이버,페이스북 등)로 전달하는 역할을 수행하는 기능</strong>을 말한다.</p>
 <p><code>컨테이너 코드 스니펫</code>(컨테이너 생성 시 헤더, 바디에 심으라고 하는 코드)이라는 기본 스크립트를 소스코드에 한번 추가하면 이후 개발자가 관여하지 않더라도 GTM에서 제공하는 UI를 통해 태그를 효율적으로 추가,삭제,변경 등 관리하기 위해 사용한다.</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Google Tag Manager --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript">(<span class="keyword">function</span>(<span class="params">w,d,s,l,i</span>)&#123;w[l]=w[l]||[];w[l].<span class="title function_">push</span>(&#123;<span class="string">&#x27;gtm.start&#x27;</span>:</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">new</span> <span class="title class_">Date</span>().<span class="title function_">getTime</span>(),<span class="attr">event</span>:<span class="string">&#x27;gtm.js&#x27;</span>&#125;);<span class="keyword">var</span> f=d.<span class="title function_">getElementsByTagName</span>(s)[<span class="number">0</span>],</span></span><br><span class="line"><span class="language-javascript">j=d.<span class="title function_">createElement</span>(s),dl=l!=<span class="string">&#x27;dataLayer&#x27;</span>?<span class="string">&#x27;&amp;l=&#x27;</span>+<span class="attr">l</span>:<span class="string">&#x27;&#x27;</span>;j.<span class="property">async</span>=<span class="literal">true</span>;j.<span class="property">src</span>=</span></span><br><span class="line"><span class="language-javascript"><span class="string">&#x27;https://www.googletagmanager.com/gtm.js?id=&#x27;</span>+i+dl;f.<span class="property">parentNode</span>.<span class="title function_">insertBefore</span>(j,f);</span></span><br><span class="line"><span class="language-javascript">&#125;)(<span class="variable language_">window</span>,<span class="variable language_">document</span>,<span class="string">&#x27;script&#x27;</span>,<span class="string">&#x27;dataLayer&#x27;</span>,<span class="string">&#x27;GTM-A123456&#x27;</span>);</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- End Google Tag Manager --&gt;</span></span><br></pre></td></tr></table></figure>
@@ -53,7 +410,7 @@
 </ul>
 </li>
 </ul>
-</div></article></div></div><div class="column column-left is-3-tablet is-3-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/avatar.png" alt="Jaeyong Yoo"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Jaeyong Yoo</p><p class="is-size-6 is-block">Backend Developer</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Seoul, Korea</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">포스트</p><a href="/archives"><p class="title">45</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">카테고리</p><a href="/categories"><p class="title">18</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">태그</p><a href="/tags"><p class="title">19</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/yoo0926" target="_blank" rel="external nofollow noopener noreferrer">팔로우</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="external nofollow noopener noreferrer" title="Github" href="https://github.com/yoo0926"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="external nofollow noopener noreferrer" title="Mail" href="mailto:wodydasktp@gmail.com"><i class="far fa-envelope"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/rss2.xml"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">카테고리</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/algorithm/"><span class="level-start"><span class="level-item">algorithm</span></span><span class="level-end"><span class="level-item tag">3</span></span></a><ul><li><a class="level is-mobile" href="/categories/algorithm/programmers/"><span class="level-start"><span class="level-item">programmers</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/blog/"><span class="level-start"><span class="level-item">blog</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/book/"><span class="level-start"><span class="level-item">book</span></span><span class="level-end"><span class="level-item tag">21</span></span></a><ul><li><a class="level is-mobile" href="/categories/book/clean-architecture/"><span class="level-start"><span class="level-item">clean-architecture</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li><li><a class="level is-mobile" href="/categories/book/spring5-reactive/"><span class="level-start"><span class="level-item">spring5-reactive</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/book/springboot-aws-webservice/"><span class="level-start"><span class="level-item">springboot-aws-webservice</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/docker/"><span class="level-start"><span class="level-item">docker</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/etc/"><span class="level-start"><span class="level-item">etc</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/functional/"><span class="level-start"><span class="level-item">functional</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/git/"><span class="level-start"><span class="level-item">git</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/interview/"><span class="level-start"><span class="level-item">interview</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/java/"><span class="level-start"><span class="level-item">java</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/spring/"><span class="level-start"><span class="level-item">spring</span></span><span class="level-end"><span class="level-item tag">7</span></span></a><ul><li><a class="level is-mobile" href="/categories/spring/WebFlux/"><span class="level-start"><span class="level-item">WebFlux</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/sql/"><span class="level-start"><span class="level-item">sql</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/sql/postgresql/"><span class="level-start"><span class="level-item">postgresql</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/web/"><span class="level-start"><span class="level-item">web</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">최근 글</h3><article class="media"><div class="media-content"><p class="date"><time datetime="2023-06-16T11:55:27.000Z">2023-06-16</time></p><p class="title"><a href="/2023/06/16/spring/spring-3/">Spring Event와 ApplicationEventPublisher</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time datetime="2023-06-15T11:23:11.000Z">2023-06-15</time></p><p class="title"><a href="/2023/06/15/spring/spring-2/">ThreadLocal과 Netty</a></p><p class="categories"><a href="/categories/spring/">spring</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time datetime="2023-06-14T10:37:34.000Z">2023-06-14</time></p><p class="title"><a href="/2023/06/14/java/java-01/">Java Enum을 활용해보기</a></p><p class="categories"><a href="/categories/java/">java</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time datetime="2023-06-13T11:57:35.000Z">2023-06-13</time></p><p class="title"><a href="/2023/06/13/spring/WebFlux/spring-webflux-4/">[WebFlux] map과 flatMap에 대해서</a></p><p class="categories"><a href="/categories/spring/">spring</a> / <a href="/categories/spring/WebFlux/">WebFlux</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time datetime="2023-05-21T05:13:38.000Z">2023-05-21</time></p><p class="title"><a href="/2023/05/21/blog/hexo-upgrade/">Hexo 버전 업그레이드, 경고 지우기</a></p><p class="categories"><a href="/categories/blog/">blog</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">아카이브</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2023/06/"><span class="level-start"><span class="level-item">6월 2023</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/05/"><span class="level-start"><span class="level-item">5월 2023</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/04/"><span class="level-start"><span class="level-item">4월 2023</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/03/"><span class="level-start"><span class="level-item">3월 2023</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/02/"><span class="level-start"><span class="level-item">2월 2023</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/01/"><span class="level-start"><span class="level-item">1월 2023</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/01/"><span class="level-start"><span class="level-item">1월 2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/12/"><span class="level-start"><span class="level-item">12월 2021</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/11/"><span class="level-start"><span class="level-item">11월 2021</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/09/"><span class="level-start"><span class="level-item">9월 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/08/"><span class="level-start"><span class="level-item">8월 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/06/"><span class="level-start"><span class="level-item">6월 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/05/"><span class="level-start"><span class="level-item">5월 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/04/"><span class="level-start"><span class="level-item">4월 2021</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/12/"><span class="level-start"><span class="level-item">12월 2020</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/11/"><span class="level-start"><span class="level-item">11월 2020</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">태그</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/JWT/"><span class="tag">JWT</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/algorithm/"><span class="tag">algorithm</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/blog/"><span class="tag">blog</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/book/"><span class="tag">book</span><span class="tag">21</span></a></div><div class="control"><a class="tags has-addons" href="/tags/docker/"><span class="tag">docker</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/functional/"><span class="tag">functional</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/git/"><span class="tag">git</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/googleTagManager/"><span class="tag">googleTagManager</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hexo/"><span class="tag">hexo</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/interview/"><span class="tag">interview</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/java/"><span class="tag">java</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/kakao/"><span class="tag">kakao</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/kakaotalk/"><span class="tag">kakaotalk</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/open-graph/"><span class="tag">open graph</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/postgresql/"><span class="tag">postgresql</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/programmers/"><span class="tag">programmers</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/spring/"><span class="tag">spring</span><span class="tag">17</span></a></div><div class="control"><a class="tags has-addons" href="/tags/sql/"><span class="tag">sql</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/web/"><span class="tag">web</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">업데이트 소식 받기</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="구독"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo-header.png" alt="하루하루 끄적끄적" height="28"></a><p class="is-size-7"><span>&copy; 2023 Jaeyong Yoo</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="external nofollow noopener noreferrer">Icarus</a><br><span id="busuanzi_container_site_uv"><span id="busuanzi_value_site_uv">0</span>명의 사용자가 방문 함</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="external nofollow noopener noreferrer" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="external nofollow noopener noreferrer" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="external nofollow noopener noreferrer" title="Download on GitHub" href="https://github.com/yoo0926/yoo0926.github.io"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("ko");</script><script>var IcarusThemeSettings = {
+</div></article></div></div><div class="column column-left is-3-tablet is-3-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/avatar.png" alt="Jaeyong Yoo"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Jaeyong Yoo</p><p class="is-size-6 is-block">Backend Developer</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Seoul, Korea</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">포스트</p><a href="/archives"><p class="title">46</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">카테고리</p><a href="/categories"><p class="title">18</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">태그</p><a href="/tags"><p class="title">19</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/yoo0926" target="_blank" rel="external nofollow noopener noreferrer">팔로우</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="external nofollow noopener noreferrer" title="Github" href="https://github.com/yoo0926"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="external nofollow noopener noreferrer" title="Mail" href="mailto:wodydasktp@gmail.com"><i class="far fa-envelope"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/rss2.xml"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">카테고리</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/algorithm/"><span class="level-start"><span class="level-item">algorithm</span></span><span class="level-end"><span class="level-item tag">3</span></span></a><ul><li><a class="level is-mobile" href="/categories/algorithm/programmers/"><span class="level-start"><span class="level-item">programmers</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/blog/"><span class="level-start"><span class="level-item">blog</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/book/"><span class="level-start"><span class="level-item">book</span></span><span class="level-end"><span class="level-item tag">21</span></span></a><ul><li><a class="level is-mobile" href="/categories/book/clean-architecture/"><span class="level-start"><span class="level-item">clean-architecture</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li><li><a class="level is-mobile" href="/categories/book/spring5-reactive/"><span class="level-start"><span class="level-item">spring5-reactive</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/book/springboot-aws-webservice/"><span class="level-start"><span class="level-item">springboot-aws-webservice</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/docker/"><span class="level-start"><span class="level-item">docker</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/etc/"><span class="level-start"><span class="level-item">etc</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/functional/"><span class="level-start"><span class="level-item">functional</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/git/"><span class="level-start"><span class="level-item">git</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/interview/"><span class="level-start"><span class="level-item">interview</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/java/"><span class="level-start"><span class="level-item">java</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/spring/"><span class="level-start"><span class="level-item">spring</span></span><span class="level-end"><span class="level-item tag">7</span></span></a><ul><li><a class="level is-mobile" href="/categories/spring/WebFlux/"><span class="level-start"><span class="level-item">WebFlux</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/sql/"><span class="level-start"><span class="level-item">sql</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/sql/postgresql/"><span class="level-start"><span class="level-item">postgresql</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/web/"><span class="level-start"><span class="level-item">web</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">최근 글</h3><article class="media"><div class="media-content"><p class="date"><time datetime="2023-06-16T11:55:27.000Z">2023-06-16</time></p><p class="title"><a href="/2023/06/16/spring/spring-3/">Spring Event와 ApplicationEventPublisher</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time datetime="2023-06-15T11:23:11.000Z">2023-06-15</time></p><p class="title"><a href="/2023/06/15/spring/spring-2/">ThreadLocal과 Netty</a></p><p class="categories"><a href="/categories/spring/">spring</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time datetime="2023-06-14T10:37:34.000Z">2023-06-14</time></p><p class="title"><a href="/2023/06/14/java/java-01/">Java Enum을 활용해보기</a></p><p class="categories"><a href="/categories/java/">java</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time datetime="2023-06-13T11:57:35.000Z">2023-06-13</time></p><p class="title"><a href="/2023/06/13/spring/WebFlux/spring-webflux-4/">[WebFlux] map과 flatMap에 대해서</a></p><p class="categories"><a href="/categories/spring/">spring</a> / <a href="/categories/spring/WebFlux/">WebFlux</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time datetime="2023-05-21T05:13:38.000Z">2023-05-21</time></p><p class="title"><a href="/2023/05/21/blog/hexo-upgrade/">Hexo 버전 업그레이드, 경고 지우기</a></p><p class="categories"><a href="/categories/blog/">blog</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">아카이브</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2023/06/"><span class="level-start"><span class="level-item">6월 2023</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/05/"><span class="level-start"><span class="level-item">5월 2023</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/04/"><span class="level-start"><span class="level-item">4월 2023</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/03/"><span class="level-start"><span class="level-item">3월 2023</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/02/"><span class="level-start"><span class="level-item">2월 2023</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/01/"><span class="level-start"><span class="level-item">1월 2023</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/01/"><span class="level-start"><span class="level-item">1월 2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/12/"><span class="level-start"><span class="level-item">12월 2021</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/11/"><span class="level-start"><span class="level-item">11월 2021</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/09/"><span class="level-start"><span class="level-item">9월 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/08/"><span class="level-start"><span class="level-item">8월 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/06/"><span class="level-start"><span class="level-item">6월 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/05/"><span class="level-start"><span class="level-item">5월 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/04/"><span class="level-start"><span class="level-item">4월 2021</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/12/"><span class="level-start"><span class="level-item">12월 2020</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/11/"><span class="level-start"><span class="level-item">11월 2020</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">태그</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/JWT/"><span class="tag">JWT</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/algorithm/"><span class="tag">algorithm</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/blog/"><span class="tag">blog</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/book/"><span class="tag">book</span><span class="tag">21</span></a></div><div class="control"><a class="tags has-addons" href="/tags/docker/"><span class="tag">docker</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/functional/"><span class="tag">functional</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/git/"><span class="tag">git</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/googleTagManager/"><span class="tag">googleTagManager</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hexo/"><span class="tag">hexo</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/interview/"><span class="tag">interview</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/java/"><span class="tag">java</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/kakao/"><span class="tag">kakao</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/kakaotalk/"><span class="tag">kakaotalk</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/open-graph/"><span class="tag">open graph</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/postgresql/"><span class="tag">postgresql</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/programmers/"><span class="tag">programmers</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/spring/"><span class="tag">spring</span><span class="tag">17</span></a></div><div class="control"><a class="tags has-addons" href="/tags/sql/"><span class="tag">sql</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/web/"><span class="tag">web</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">업데이트 소식 받기</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="구독"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo-header.png" alt="하루하루 끄적끄적" height="28"></a><p class="is-size-7"><span>&copy; 2023 Jaeyong Yoo</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="external nofollow noopener noreferrer">Icarus</a><br><span id="busuanzi_container_site_uv"><span id="busuanzi_value_site_uv">0</span>명의 사용자가 방문 함</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="external nofollow noopener noreferrer" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="external nofollow noopener noreferrer" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="external nofollow noopener noreferrer" title="Download on GitHub" href="https://github.com/yoo0926/yoo0926.github.io"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("ko");</script><script>var IcarusThemeSettings = {
             article: {
                 highlight: {
                     clipboard: true,

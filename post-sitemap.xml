@@ -9,6 +9,14 @@
 
 
     <url>
+        <loc>https://yoo0926.github.io/2023/03/03/etc/naver-deview-2023/</loc>
+        <lastmod>2023-06-19T15:33:29.705Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://yoo0926.github.io/2023/06/16/spring/spring-3/</loc>
         <lastmod>2023-06-16T12:02:42.280Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -41,7 +49,7 @@
     </url>
 
     <url>
-        <loc>https://yoo0926.github.io/2021/06/10/algo/programmers-77884/</loc>
+        <loc>https://yoo0926.github.io/2021/06/10/algo/programmers/programmers-77884/</loc>
         <lastmod>2023-06-13T12:28:10.573Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -361,7 +369,7 @@
     </url>
 
     <url>
-        <loc>https://yoo0926.github.io/2021/05/09/algo/programmers-72410/</loc>
+        <loc>https://yoo0926.github.io/2021/05/09/algo/programmers/programmers-72410/</loc>
         <lastmod>2023-05-14T14:50:58.305Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
