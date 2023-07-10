@@ -9,6 +9,38 @@
 
 
     <url>
+        <loc>https://yoo0926.github.io/2023/06/24/algo/algo-graph-1/</loc>
+        <lastmod>2023-07-10T16:04:05.221Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://yoo0926.github.io/2023/06/24/algo/algo-search-1/</loc>
+        <lastmod>2023-07-10T16:03:25.209Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://yoo0926.github.io/2023/06/25/algo/algo-search-2/</loc>
+        <lastmod>2023-07-10T16:03:19.197Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://yoo0926.github.io/2021/09/02/algo/algo-1/</loc>
+        <lastmod>2023-07-10T16:02:29.925Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://yoo0926.github.io/2023/03/03/etc/naver-deview-2023/</loc>
         <lastmod>2023-06-19T15:33:29.705Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -355,14 +387,6 @@
     <url>
         <loc>https://yoo0926.github.io/2021/11/13/angular/angular-1/</loc>
         <lastmod>2023-05-14T14:50:58.306Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://yoo0926.github.io/2021/09/02/algo/algo-1/</loc>
-        <lastmod>2023-05-14T14:50:58.305Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
